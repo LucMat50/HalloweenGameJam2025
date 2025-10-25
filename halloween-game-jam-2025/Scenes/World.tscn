@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=4 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
+[ext_resource type="Script" uid="uid://d3rhbrrxviip" path="res://Scripts/Camera.gd" id="2_5nsto"]
 [ext_resource type="PackedScene" uid="uid://bgw37s0ts834g" path="res://Scenes/Player.tscn" id="2_j0p05"]
 
 [node name="World" type="Node2D"]
@@ -10,13 +11,10 @@ position = Vector2(575.58, 327.5)
 scale = Vector2(1.0618888, 0.8706667)
 texture = ExtResource("1_5cjrv")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(578, 330)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
-
 [node name="Player" parent="." instance=ExtResource("2_j0p05")]
 position = Vector2(578, 330)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
-remote_path = NodePath("../../Camera2D")
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+script = ExtResource("2_5nsto")
