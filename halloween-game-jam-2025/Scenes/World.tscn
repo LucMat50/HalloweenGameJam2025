@@ -10,5 +10,13 @@ position = Vector2(575.58, 327.5)
 scale = Vector2(1.0618888, 0.8706667)
 texture = ExtResource("1_5cjrv")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(578, 330)
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
 [node name="Player" parent="." instance=ExtResource("2_j0p05")]
 position = Vector2(578, 330)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Player"]
+remote_path = NodePath("../../Camera2D")
