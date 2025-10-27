@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://yxmwt4kvkrb3"]
+
+[ext_resource type="Script" uid="uid://bk0lk4donktyw" path="res://Scripts/start_menu.gd" id="1_dl0pg"]
+[ext_resource type="Texture2D" uid="uid://ftwrjusqpc8n" path="res://Assets/StartPauseMenu/StartScreen.webp" id="1_dvnd1"]
+[ext_resource type="Texture2D" uid="uid://y53pvqrtwhn1" path="res://Assets/StartPauseMenu/Board1.webp" id="2_xtte2"]
+[ext_resource type="Texture2D" uid="uid://k6blld1g74mh" path="res://Assets/StartPauseMenu/Board2.webp" id="4_ujd4t"]
+[ext_resource type="Texture2D" uid="uid://q5e1df8pr7qm" path="res://Assets/StartPauseMenu/Board3.webp" id="5_ql1sk"]
+
+[node name="StartMenu" type="Node2D"]
+script = ExtResource("1_dl0pg")
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(0.83720934, 0.8372093)
+texture = ExtResource("1_dvnd1")
+centered = false
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -400.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+
+[node name="Play" type="TextureButton" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_xtte2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/Play"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Play"
+
+[node name="Options" type="TextureButton" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_ujd4t")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/Options"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Options"
+
+[node name="Quit" type="TextureButton" parent="Control/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("5_ql1sk")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+text = "Quit"
+
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Control/PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
