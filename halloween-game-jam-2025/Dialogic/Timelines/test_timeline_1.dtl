@@ -1,0 +1,5 @@
+test
+DebugCharacter: test 2
+test 3
+[signal arg="end"]
+[end_timeline]

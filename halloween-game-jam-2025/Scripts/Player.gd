@@ -7,8 +7,9 @@ extends CharacterBody2D
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera : Camera2D = $Camera2D
+@onready var dialog_manager : Control = $Camera2D/DialogCanvasLayer/DialogManager
 
-enum State {IDLE, WALK, SPRINT}
+enum State {IDLE, WALK, SPRINT, DIALOG}
 
 var current_state = State.IDLE
 var input : Vector2
@@ -20,20 +21,21 @@ func _ready() -> void:
 	sprite.play("down_idle")
 
 func _physics_process(_delta: float) -> void:
-	if Input.is_action_pressed("sprint"):
-		change_state(State.SPRINT)
-		speed = sprint_speed
-	else:
-		change_state(State.WALK)
-		camera.end_screen_shake()
-		speed = walk_speed
-	
-	input = Input.get_vector("left", "right", "up", "down")
-	velocity = input * speed
-	
-	move_and_slide()
-	select_animation()
-	update_animation_parameters()
+	if current_state != State.DIALOG:
+		if Input.is_action_pressed("sprint"):
+			change_state(State.SPRINT)
+			speed = sprint_speed
+		else:
+			change_state(State.WALK)
+			camera.end_screen_shake()
+			speed = walk_speed
+		
+		input = Input.get_vector("left", "right", "up", "down")
+		velocity = input * speed
+		
+		move_and_slide()
+		select_animation()
+		update_animation_parameters()
 	
 func change_state(new_state) -> void:
 	if current_state == new_state:
@@ -54,3 +56,9 @@ func update_animation_parameters() -> void:
 		return
 	animation_tree["parameters/Idle/blend_position"] = input
 	animation_tree["parameters/Walk/blend_position"] = input
+	
+func player_enter_dialog() -> void:
+	current_state = State.DIALOG
+ 
+func player_exit_dialog() -> void:
+	current_state = State.IDLE
