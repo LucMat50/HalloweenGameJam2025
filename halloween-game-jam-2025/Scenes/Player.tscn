@@ -730,7 +730,7 @@ states/Idle/position = Vector2(563, 61)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_5v66d")
 states/Walk/position = Vector2(567, 149)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animation_tree") groups=["player"]]
 script = ExtResource("1_kyqiw")
 animation_tree = NodePath("AnimationTree")
 inv = ExtResource("2_gntrk")

@@ -56,3 +56,8 @@ func update_animation_parameters() -> void:
 		return
 	animation_tree["parameters/Idle/blend_position"] = input
 	animation_tree["parameters/Walk/blend_position"] = input
+
+#item interaction
+func collect(item):
+	inv.insert(item)
+	print("Collect: ", item.name)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://ps23jjiig7bw"]
+
+[ext_resource type="Script" uid="uid://dwo6vqsqrddf5" path="res://Scripts/key_object.gd" id="1_27ls4"]
+[ext_resource type="Texture2D" uid="uid://drryvmoju6y31" path="res://Inventory/Items/TempKey.png" id="1_kepx3"]
+[ext_resource type="Resource" uid="uid://c2o62vg01f8de" path="res://Inventory/Items/tempKey.tres" id="2_p2b5n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_27ls4"]
+radius = 32.0
+
+[node name="Key" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_27ls4")
+item = ExtResource("2_p2b5n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kepx3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_27ls4")
