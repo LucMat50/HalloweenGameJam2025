@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=6 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://d3rhbrrxviip" path="res://Scripts/Camera.gd" id="2_5nsto"]
 [ext_resource type="PackedScene" uid="uid://bgw37s0ts834g" path="res://Scenes/Player.tscn" id="2_j0p05"]
 [ext_resource type="PackedScene" uid="uid://wt0o3w0j2bre" path="res://Scenes/pause_menu.tscn" id="4_gjpho"]
+[ext_resource type="PackedScene" uid="uid://d3m4564clp5km" path="res://Inventory/inv_ui.tscn" id="5_p70al"]
 
 [node name="World" type="Node2D"]
 
@@ -23,3 +24,9 @@ script = ExtResource("2_5nsto")
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 
 [node name="PauseMenu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_gjpho")]
+
+[node name="Inv_UI" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("5_p70al")]
+offset_left = 472.0
+offset_top = 353.0
+offset_right = -468.0
+offset_bottom = -263.0

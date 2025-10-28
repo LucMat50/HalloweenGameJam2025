@@ -8,6 +8,8 @@ extends CharacterBody2D
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var camera : Camera2D = $Camera2D
 
+@export var inv: Inv
+
 enum State {IDLE, WALK, SPRINT}
 
 var current_state = State.IDLE
