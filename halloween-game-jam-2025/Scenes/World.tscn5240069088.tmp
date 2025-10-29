@@ -40,4 +40,4 @@ position = Vector2(415, 361)
 [node name="keyInteractable" parent="." instance=ExtResource("7_y7y61")]
 position = Vector2(307, 388)
 
-[connection signal="key1" from="Key" to="keyInteractable" method="_on_key_key_1"]
+[connection signal="key1" from="Player" to="keyInteractable" method="_on_player_key_1"]
