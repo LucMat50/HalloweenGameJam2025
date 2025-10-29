@@ -3,6 +3,7 @@ extends Area2D
 @export var item: InvItem
 var player = null
 var player_in_range = false
+signal key1
 
 func _ready():
 	connect("body_entered", Callable(self, "_on_body_entered"))
@@ -22,6 +23,7 @@ func _on_body_exited(body):
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		if player:
+			emit_signal("key1")
 			player.collect(item)  # give item to player
 			queue_free()  # remove item from world
 #player.collect(item)

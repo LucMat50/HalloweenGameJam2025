@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://ypru5q0186v8"]
+
+[ext_resource type="Script" uid="uid://ux0bqys5iww0" path="res://Scripts/key_interactable.gd" id="1_t501h"]
+[ext_resource type="Texture2D" uid="uid://dg0nom2gj70ux" path="res://icon.svg" id="2_mt0bp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t501h"]
+radius = 51.24451
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw6ka"]
+size = Vector2(63, 63.25)
+
+[node name="keyInteractable" type="Area2D" groups=["Interactable"]]
+script = ExtResource("1_t501h")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.4305115e-06, -1.1920929e-06)
+scale = Vector2(0.48437503, 0.5)
+texture = ExtResource("2_mt0bp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.684342e-14)
+shape = SubResource("CircleShape2D_t501h")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_sw6ka")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

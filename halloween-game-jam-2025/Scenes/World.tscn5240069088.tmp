@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://wt0o3w0j2bre" path="res://Scenes/pause_menu.tscn" id="4_gjpho"]
 [ext_resource type="PackedScene" uid="uid://d3m4564clp5km" path="res://Inventory/inv_ui.tscn" id="5_p70al"]
 [ext_resource type="PackedScene" uid="uid://ypru5q0186v8" path="res://Scenes/key_interactable.tscn" id="7_y7y61"]
-[ext_resource type="PackedScene" uid="uid://dpoereb5qqcrc" path="res://Scenes/DialogManager.tscn" id="6_y7y61"]
 
 [node name="World" type="Node2D"]
 
@@ -35,16 +34,10 @@ offset_right = -468.0
 offset_bottom = -263.0
 player = NodePath("../../..")
 
-[node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
-
-[node name="DialogManager" parent="Player/Camera2D/DialogCanvasLayer" instance=ExtResource("6_y7y61")]
-
 [node name="Key" parent="." instance=ExtResource("2_45d1s")]
 position = Vector2(415, 361)
 
 [node name="keyInteractable" parent="." instance=ExtResource("7_y7y61")]
 position = Vector2(307, 388)
 
-[connection signal="key1" from="Key" to="keyInteractable" method="_on_key_key_1"]
-[connection signal="dialog_ended" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_exit_dialog"]
-[connection signal="dialog_started" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_enter_dialog"]
+[connection signal="key1" from="Player" to="keyInteractable" method="_on_player_key_1"]
