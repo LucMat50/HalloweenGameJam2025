@@ -25,6 +25,22 @@ directories/dch_directory={
 "DebugCharacter": "res://Dialogic/Characters/DebugCharacter.dch"
 }
 directories/dtl_directory={
+"Blueprints": "res://Dialogic/Timelines/Items/Blueprints.dtl",
+"Bucket": "res://Dialogic/Timelines/Items/Bucket.dtl",
+"Butchers Notes": "res://Dialogic/Timelines/Items/Butchers Notes.dtl",
+"Compass": "res://Dialogic/Timelines/Items/Compass.dtl",
+"Engine": "res://Dialogic/Timelines/Items/Engine.dtl",
+"Hose": "res://Dialogic/Timelines/Items/Hose.dtl",
+"Manual": "res://Dialogic/Timelines/Items/Manual.dtl",
+"Mounted Deer Head": "res://Dialogic/Timelines/Items/Mounted Deer Head.dtl",
+"Plushie": "res://Dialogic/Timelines/Items/Plushie.dtl",
+"Rug": "res://Dialogic/Timelines/Items/Rug.dtl",
+"Safe": "res://Dialogic/Timelines/Items/Safe.dtl",
+"Saw": "res://Dialogic/Timelines/Items/Saw.dtl",
+"Shed Key": "res://Dialogic/Timelines/Items/Shed Key.dtl",
+"Shed door": "res://Dialogic/Timelines/Items/Shed door.dtl",
+"Truck": "res://Dialogic/Timelines/Items/Truck.dtl",
+"Window": "res://Dialogic/Timelines/Items/Window.dtl",
 "key": "res://Dialogic/Timelines/Items/key.dtl",
 "test_timeline_1": "res://Dialogic/Timelines/test_timeline_1.dtl"
 }
