@@ -6,3 +6,4 @@ class_name Puzzle
 @export var requiredItems : Array[InvItem]
 @export var prerequisitePuzzles : Array[Puzzle]
 @export var prereqNotMetTimeline : String
+@export var puzzlesToActivate : Array[Puzzle]
