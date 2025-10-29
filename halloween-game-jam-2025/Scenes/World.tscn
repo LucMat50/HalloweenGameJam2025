@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=8 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://d3rhbrrxviip" path="res://Scripts/Camera.gd" id="2_5nsto"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bgw37s0ts834g" path="res://Scenes/Player.tscn" id="2_j0p05"]
 [ext_resource type="PackedScene" uid="uid://wt0o3w0j2bre" path="res://Scenes/pause_menu.tscn" id="4_gjpho"]
 [ext_resource type="PackedScene" uid="uid://d3m4564clp5km" path="res://Inventory/inv_ui.tscn" id="5_p70al"]
+[ext_resource type="PackedScene" uid="uid://ypru5q0186v8" path="res://Scenes/key_interactable.tscn" id="7_y7y61"]
 
 [node name="World" type="Node2D"]
 
@@ -35,3 +36,6 @@ player = NodePath("../../..")
 
 [node name="Key" parent="." instance=ExtResource("2_45d1s")]
 position = Vector2(415, 361)
+
+[node name="keyInteractable" parent="." instance=ExtResource("7_y7y61")]
+position = Vector2(307, 388)
