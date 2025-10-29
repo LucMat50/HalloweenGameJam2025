@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://yxmwt4kvkrb3"]
 
 [ext_resource type="Script" uid="uid://bk0lk4donktyw" path="res://Scripts/start_menu.gd" id="1_dl0pg"]
-[ext_resource type="Texture2D" uid="uid://ftwrjusqpc8n" path="res://Assets/StartPauseMenu/StartScreen.webp" id="1_dvnd1"]
+[ext_resource type="Texture2D" uid="uid://be3dl7c103w28" path="res://Assets/StartPauseMenu/TitleMenuBackground.webp" id="2_ujd4t"]
 [ext_resource type="Texture2D" uid="uid://y53pvqrtwhn1" path="res://Assets/StartPauseMenu/Board1.webp" id="2_xtte2"]
 [ext_resource type="Texture2D" uid="uid://k6blld1g74mh" path="res://Assets/StartPauseMenu/Board2.webp" id="4_ujd4t"]
 [ext_resource type="Texture2D" uid="uid://q5e1df8pr7qm" path="res://Assets/StartPauseMenu/Board3.webp" id="5_ql1sk"]
@@ -11,7 +11,7 @@ script = ExtResource("1_dl0pg")
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(0.83720934, 0.8372093)
-texture = ExtResource("1_dvnd1")
+texture = ExtResource("2_ujd4t")
 centered = false
 
 [node name="Control" type="Control" parent="."]
