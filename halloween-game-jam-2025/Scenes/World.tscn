@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=27 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Texture2D" uid="uid://dipq7bknrig2n" path="res://Assets/Map/MapSkele.webp" id="1_y7y61"]
@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://wt0o3w0j2bre" path="res://Scenes/pause_menu.tscn" id="4_gjpho"]
 [ext_resource type="Texture2D" uid="uid://dygi07ramgsde" path="res://Assets/Map/HouseFloor1.webp" id="5_7yo87"]
 [ext_resource type="PackedScene" uid="uid://d3m4564clp5km" path="res://Inventory/inv_ui.tscn" id="5_p70al"]
-[ext_resource type="PackedScene" uid="uid://ypru5q0186v8" path="res://Scenes/key_interactable.tscn" id="7_y7y61"]
 [ext_resource type="Texture2D" uid="uid://dctpfbcmudq5t" path="res://Assets/Map/HouseFloor2.webp" id="6_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://dpoereb5qqcrc" path="res://Scenes/DialogManager.tscn" id="6_y7y61"]
+[ext_resource type="PackedScene" uid="uid://ypru5q0186v8" path="res://Scenes/key_interactable.tscn" id="7_y7y61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2d71"]
 size = Vector2(906.8224, 10)
@@ -406,7 +406,6 @@ position = Vector2(516, 397)
 [node name="keyInteractable" parent="." instance=ExtResource("7_y7y61")]
 position = Vector2(307, 388)
 
-[connection signal="key1" from="Key" to="keyInteractable" method="_on_key_key_1"]
 [connection signal="body_entered" from="Map/TeleportToShed" to="Map/TeleportToShed" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/TeleportToF1" to="Map/TeleportToF1" method="_on_body_entered"]
 [connection signal="body_entered" from="Shed/TeleportFromShed" to="Shed/TeleportFromShed" method="_on_body_entered"]
@@ -415,3 +414,4 @@ position = Vector2(307, 388)
 [connection signal="body_entered" from="HouseFloor2/TeleportFromF2" to="HouseFloor2/TeleportFromF2" method="_on_body_entered"]
 [connection signal="dialog_ended" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_exit_dialog"]
 [connection signal="dialog_started" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_enter_dialog"]
+[connection signal="key1" from="Key" to="keyInteractable" method="_on_key_key_1"]
