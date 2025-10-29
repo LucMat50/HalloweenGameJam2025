@@ -13,8 +13,6 @@ enum State {IDLE, WALK, SPRINT, DIALOG}
 
 @export var inv: Inv
 
-enum State {IDLE, WALK, SPRINT}
-
 var current_state = State.IDLE
 var input : Vector2
 var speed = walk_speed
@@ -69,5 +67,9 @@ func player_exit_dialog() -> void:
 
 #item interaction
 func collect(item):
+	change_state(State.IDLE) # stops animation from continueing
+	playback.travel("Idle")
 	inv.insert(item)
+	dialog_manager.start_dialog(item.description_timeline)
+	dialog_manager.show_image(item.texture)
 	print("Collect: ", item.name)

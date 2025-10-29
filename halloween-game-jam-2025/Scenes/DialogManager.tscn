@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dpoereb5qqcrc"]
+[gd_scene load_steps=5 format=3 uid="uid://dpoereb5qqcrc"]
 
 [ext_resource type="Script" uid="uid://c6qijmvmu3g3m" path="res://Scripts/DialogManager.gd" id="1_ep2gf"]
 [ext_resource type="Texture2D" uid="uid://b35mrim6u7xi8" path="res://Assets/UI/dialogbox_nochar.png" id="2_ofj6k"]
 [ext_resource type="Texture2D" uid="uid://mvlk7uxvkdap" path="res://Assets/UI/dialogbox.png" id="3_hqwho"]
+[ext_resource type="Texture2D" uid="uid://dg0nom2gj70ux" path="res://icon.svg" id="4_0dutt"]
 
 [node name="DialogManager" type="Control"]
 texture_filter = 2
@@ -13,7 +14,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ep2gf")
-my_dialog = "test_timeline_1"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 texture_filter = 2
@@ -54,3 +54,19 @@ rotation = -0.23561946
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 500
+theme_override_constants/margin_right = 500
+theme_override_constants/margin_bottom = 50
+
+[node name="ItemImage" type="TextureRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("4_0dutt")
+stretch_mode = 5

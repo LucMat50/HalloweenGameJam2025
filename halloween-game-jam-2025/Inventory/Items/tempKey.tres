@@ -7,4 +7,5 @@
 script = ExtResource("1_q2j26")
 name = " Key"
 texture = ExtResource("2_mvc8y")
+description_timeline = "key"
 metadata/_custom_type_script = "uid://cpocwgcs2t07p"
