@@ -17,3 +17,10 @@ func insert(item: InvItem):
 			emptySlots[0].item = item
 			emptySlots[0].amount = 1
 	update.emit()
+	
+	
+func hasItem(item : InvItem) -> bool:
+	for i in slots:
+		if i.item == item:
+			return true
+	return false

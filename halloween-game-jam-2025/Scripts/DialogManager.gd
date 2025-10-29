@@ -1,4 +1,5 @@
 extends Control
+class_name DialogManager
 
 signal dialog_started
 signal dialog_ended
@@ -17,7 +18,11 @@ func start_dialog(timeline : String):
 	dialog_started.emit()
 	
 func show_image(image : CompressedTexture2D):
-	item_image.texture = image
+	if image:
+		visible = true
+		item_image.texture = image
+	else:
+		visible = false
 
 func change_name(character) -> void:
 	if character:

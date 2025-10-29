@@ -22,6 +22,8 @@ var speed = walk_speed
 var playback : AnimationNodeStateMachinePlayback
 
 func _ready() -> void:
+	PuzzleManager.inv = inv
+	PuzzleManager.dialog = dialog_manager
 	playback = animation_tree["parameters/playback"]
 	sprite.play("down_idle")
 
@@ -69,10 +71,8 @@ func player_exit_dialog() -> void:
 	current_state = State.IDLE
 
 #item interaction
-func collect(item):
+func tryCollect(item):
 	change_state(State.IDLE) # stops animation from continueing
 	playback.travel("Idle")
-	inv.insert(item)
-	dialog_manager.start_dialog(item.description_timeline)
-	dialog_manager.show_image(item.texture)
 	print("Collect: ", item.name)
+	return PuzzleManager.tryPuzzle(item)

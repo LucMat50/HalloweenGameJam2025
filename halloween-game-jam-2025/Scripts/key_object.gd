@@ -24,6 +24,7 @@ func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		if player:
 			emit_signal("key1")
-			player.collect(item)  # give item to player
-			queue_free()  # remove item from world
+			var success = player.tryCollect(item)  # give item to player
+			if success:
+				queue_free()  # remove item from world
 #player.collect(item)

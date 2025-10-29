@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpoereb5qqcrc"]
+[gd_scene load_steps=4 format=3 uid="uid://dpoereb5qqcrc"]
 
 [ext_resource type="Script" uid="uid://c6qijmvmu3g3m" path="res://Scripts/DialogManager.gd" id="1_ep2gf"]
 [ext_resource type="Texture2D" uid="uid://b35mrim6u7xi8" path="res://Assets/UI/dialogbox_nochar.png" id="2_ofj6k"]
 [ext_resource type="Texture2D" uid="uid://mvlk7uxvkdap" path="res://Assets/UI/dialogbox.png" id="3_hqwho"]
-[ext_resource type="Texture2D" uid="uid://dg0nom2gj70ux" path="res://icon.svg" id="4_0dutt"]
 
 [node name="DialogManager" type="Control"]
 texture_filter = 2
@@ -68,5 +67,4 @@ theme_override_constants/margin_bottom = 50
 
 [node name="ItemImage" type="TextureRect" parent="MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("4_0dutt")
 stretch_mode = 5
