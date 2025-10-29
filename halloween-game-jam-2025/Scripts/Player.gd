@@ -11,6 +11,10 @@ extends CharacterBody2D
 
 enum State {IDLE, WALK, SPRINT, DIALOG}
 
+@export var inv: Inv
+
+enum State {IDLE, WALK, SPRINT}
+
 var current_state = State.IDLE
 var input : Vector2
 var speed = walk_speed
@@ -62,3 +66,8 @@ func player_enter_dialog() -> void:
  
 func player_exit_dialog() -> void:
 	current_state = State.IDLE
+
+#item interaction
+func collect(item):
+	inv.insert(item)
+	print("Collect: ", item.name)
