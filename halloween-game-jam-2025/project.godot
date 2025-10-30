@@ -90,6 +90,8 @@ text/autoadvance_fixed_delay=1.0
 text/autocolor_names=false
 text/absolute_autopauses=false
 layout/end_behaviour=0
+glossary/default_case_sensitive=true
+variables={}
 
 [display]
 
@@ -98,6 +100,18 @@ window/stretch/mode="canvas_items"
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Assets/": "orange",
+"res://Dialogic/": "yellow",
+"res://Inventory/": "green",
+"res://Resources/": "teal",
+"res://Scenes/": "blue",
+"res://Scripts/": "purple",
+"res://addons/": "red"
+}
 
 [global_group]
 

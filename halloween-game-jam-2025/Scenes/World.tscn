@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=34 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Texture2D" uid="uid://dipq7bknrig2n" path="res://Assets/Map/MapSkele.webp" id="1_y7y61"]
@@ -9,10 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://bj4vu7s5wgd3a" path="res://Assets/Map/ShedInterior.webp" id="3_uo7di"]
 [ext_resource type="PackedScene" uid="uid://wt0o3w0j2bre" path="res://Scenes/pause_menu.tscn" id="4_gjpho"]
 [ext_resource type="Texture2D" uid="uid://dygi07ramgsde" path="res://Assets/Map/HouseFloor1.webp" id="5_7yo87"]
+[ext_resource type="PackedScene" uid="uid://c51ng030ic7hg" path="res://Scenes/sawObject.tscn" id="5_8l3nt"]
 [ext_resource type="PackedScene" uid="uid://d3m4564clp5km" path="res://Inventory/inv_ui.tscn" id="5_p70al"]
+[ext_resource type="PackedScene" uid="uid://ccpt6cbafs4v4" path="res://Scenes/saw_interactable.tscn" id="6_kwl8l"]
 [ext_resource type="Texture2D" uid="uid://dctpfbcmudq5t" path="res://Assets/Map/HouseFloor2.webp" id="6_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://dpoereb5qqcrc" path="res://Scenes/DialogManager.tscn" id="6_y7y61"]
 [ext_resource type="PackedScene" uid="uid://ypru5q0186v8" path="res://Scenes/key_interactable.tscn" id="7_y7y61"]
+[ext_resource type="Texture2D" uid="uid://ct36unx77byra" path="res://Assets/Map/HouseBasement.webp" id="9_xiqgv"]
+[ext_resource type="Texture2D" uid="uid://b7jxbgsfcptg1" path="res://Assets/Map/Upstairs.webp" id="10_rwt1y"]
+[ext_resource type="Texture2D" uid="uid://bmi1q78qaut5j" path="res://Assets/Map/Stairs_basement_and_1st_floor.webp" id="10_waglr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2d71"]
 size = Vector2(906.8224, 10)
@@ -43,13 +48,19 @@ size = Vector2(10, 462)
 size = Vector2(600, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kwl8l"]
-size = Vector2(20, 56)
+size = Vector2(49, 85)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xiqgv"]
 size = Vector2(10, 1000)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_waglr"]
 size = Vector2(1100, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvfa8"]
+size = Vector2(1050, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0dna"]
+size = Vector2(10, 970)
 
 [node name="World" type="Node2D"]
 
@@ -209,6 +220,7 @@ position = Vector2(-7, -171)
 polygon = PackedVector2Array(311, 62, 131, 64, -171, 64, -220, 64, -203, 80, -199, 89, -205, 91, -210, 99, -216, 101, -235, 94, -253, 93, -259, 119, -259, 163, -262, 180, -270, 191, -287, 214, -289, -54, 308, -55)
 
 [node name="TeleportFromShed" type="Area2D" parent="Shed" node_paths=PackedStringArray("landing_zone")]
+visible = false
 position = Vector2(280, 60)
 collision_layer = 2
 script = ExtResource("3_kn06e")
@@ -226,9 +238,16 @@ shape = SubResource("RectangleShape2D_kwl8l")
 [node name="Marker2D" type="Marker2D" parent="Shed/TeleportFromShed"]
 position = Vector2(-20, 0)
 
+[node name="Saw" parent="Shed" instance=ExtResource("5_8l3nt")]
+position = Vector2(38, -132)
+
+[node name="saw_Interactable" parent="Shed" instance=ExtResource("6_kwl8l")]
+position = Vector2(-248, -58)
+scale = Vector2(2, 2)
+
 [node name="HouseFloor1" type="Sprite2D" parent="."]
 position = Vector2(-2744, -329)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_7yo87")
 
 [node name="Floor1WestBorder" type="StaticBody2D" parent="HouseFloor1"]
@@ -259,7 +278,7 @@ shape = SubResource("RectangleShape2D_waglr")
 position = Vector2(113, -234)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor1/Border1"]
-polygon = PackedVector2Array(119, 181, 104, 233, -86, 248, -91, 161, -100, -60, -99, -237, 115, -237, 404, -233, 405, -16, 333, -17, 329, -66, 114, -184, 115, -59, 117, -48, 329, 63, 335, 131, 115, 125)
+polygon = PackedVector2Array(119, 181, 104, 233, -86, 248, -91, 161, -100, -60, -99, -237, 115, -237, 404, -233, 405, -16, 333, -17, 329, -66, 114, -184, 115, -59, 117, -48, 119, 12, 115, 86, 115, 125)
 
 [node name="CouchBorder" type="StaticBody2D" parent="HouseFloor1"]
 position = Vector2(191, 219)
@@ -267,11 +286,20 @@ position = Vector2(191, 219)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor1/CouchBorder"]
 polygon = PackedVector2Array(130, -85, 139, -15, 126, 44, -116, 53, -144, -11, -139, -77, -7, -98)
 
-[node name="KitchemBorder" type="StaticBody2D" parent="HouseFloor1"]
+[node name="KitchenBorder" type="StaticBody2D" parent="HouseFloor1"]
 position = Vector2(-367, -350)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor1/KitchemBorder"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor1/KitchenBorder"]
 polygon = PackedVector2Array(159, 228, 158, 320, 145, 331, 145, 368, 136, 380, 86, 380, 85, 434, 66, 441, 10, 447, 5, 390, -151, 387, -148, -117, 378, -116, 389, 192, 273, 192, 272, 87, 38, 90, 31, 163, 30, 172, -149, 175, -147, 230, 49, 224)
+
+[node name="Stairs2" type="Sprite2D" parent="HouseFloor1"]
+position = Vector2(342, -248)
+texture = ExtResource("10_waglr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HouseFloor1/Stairs2"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor1/Stairs2/StaticBody2D"]
+polygon = PackedVector2Array(106, 148, 108, 98, -106, -16, -106, -110, 108, -12, 106, -42, -108, -154, -124, -152, -126, 142)
 
 [node name="TeleportFromF1" type="Area2D" parent="HouseFloor1" node_paths=PackedStringArray("landing_zone")]
 position = Vector2(-492, 220)
@@ -305,15 +333,15 @@ scale = Vector2(19.776073, 161.00002)
 mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor1/TeleportToF2"]
-position = Vector2(0, 7)
+position = Vector2(7, 7)
 shape = SubResource("RectangleShape2D_kwl8l")
 
 [node name="Marker2D" type="Marker2D" parent="HouseFloor1/TeleportToF2"]
-position = Vector2(20, 0)
+position = Vector2(88, 64)
 
 [node name="HouseFloor2" type="Sprite2D" parent="."]
 position = Vector2(-2939, 414)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_ti1bm")
 
 [node name="Floor2WestBorder" type="StaticBody2D" parent="HouseFloor2"]
@@ -344,7 +372,7 @@ shape = SubResource("RectangleShape2D_waglr")
 position = Vector2(-19, -376)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor2/Border1"]
-polygon = PackedVector2Array(65, 30, 63, 106, -107, 108, -112, 29, -148, 31, -154, 104, -265, 108, -268, 64, -361, 68, -351, 135, -356, 149, -411, 150, -424, 75, -449, 74, -450, -62, 487, -64, 488, 27, 480, 46, 410, 50, 278, 117, 273, 127, 256, 128, 250, 9, 229, 8, 251, 177, 410, 173, 416, 221, 239, 225, 233, 195, 227, 115, 93, 113, 93, 30)
+polygon = PackedVector2Array(65, 30, 63, 106, -107, 108, -112, 29, -148, 31, -154, 104, -265, 108, -268, 64, -361, 68, -351, 135, -356, 149, -411, 150, -424, 75, -449, 74, -450, -62, 487, -64, 488, 27, 255, 30, 249, -6, 229, -6, 227, 115, 93, 113, 93, 30)
 
 [node name="BedBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(-345, 205)
@@ -357,6 +385,16 @@ position = Vector2(-56, 230)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor2/CatBedBorder"]
 polygon = PackedVector2Array(-41, -73, 41, -71, 45, 52, -39, 60)
+
+[node name="Stairs" type="Sprite2D" parent="HouseFloor2"]
+position = Vector2(335, -264)
+scale = Vector2(0.9071429, 1)
+texture = ExtResource("10_rwt1y")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="HouseFloor2/Stairs"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor2/Stairs/StaticBody2D"]
+polygon = PackedVector2Array(65.03955, 72, 65.03955, 92, 51.811035, 92, 51.811035, 110, -128.97607, 110, -126.771484, 92, -137.79492, 92, -137.79492, -118, 146.61426, -118, 146.61426, -82, 69.44873, -82, -111.33838, -14, -115.74805, 72)
 
 [node name="TeleportFromF2" type="Area2D" parent="HouseFloor2" node_paths=PackedStringArray("landing_zone")]
 position = Vector2(248, -224)
@@ -371,17 +409,70 @@ scale = Vector2(19.776073, 55.999992)
 mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor2/TeleportFromF2"]
-position = Vector2(0, -7)
+position = Vector2(7.5, -21.5)
 shape = SubResource("RectangleShape2D_kwl8l")
 
 [node name="Marker2D" type="Marker2D" parent="HouseFloor2/TeleportFromF2"]
-position = Vector2(20, 0)
+position = Vector2(134, -38)
+
+[node name="HouseBasement" type="Sprite2D" parent="."]
+position = Vector2(-1785, 1170)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_xiqgv")
+
+[node name="BasementNorthBorder" type="StaticBody2D" parent="HouseBasement"]
+position = Vector2(0, -470)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBasement/BasementNorthBorder"]
+shape = SubResource("RectangleShape2D_mvfa8")
+
+[node name="BasementSouthBorder" type="StaticBody2D" parent="HouseBasement"]
+position = Vector2(0, 480)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBasement/BasementSouthBorder"]
+shape = SubResource("RectangleShape2D_mvfa8")
+
+[node name="BasementEastBorder" type="StaticBody2D" parent="HouseBasement"]
+position = Vector2(525, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBasement/BasementEastBorder"]
+shape = SubResource("RectangleShape2D_r0dna")
+
+[node name="BasementWestBorder" type="StaticBody2D" parent="HouseBasement"]
+position = Vector2(-525, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBasement/BasementWestBorder"]
+shape = SubResource("RectangleShape2D_r0dna")
+
+[node name="Stairs" type="Sprite2D" parent="HouseBasement"]
+position = Vector2(342, -248)
+texture = ExtResource("10_waglr")
+
+[node name="Area2D" type="Area2D" parent="HouseBasement/Stairs"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseBasement/Stairs/Area2D"]
+polygon = PackedVector2Array(106, 148, 108, 98, -106, -16, -106, -110, 108, -12, 106, -42, -108, -154, -124, -152, -126, 142)
+
+[node name="Border1" type="StaticBody2D" parent="HouseBasement"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseBasement/Border1"]
+polygon = PackedVector2Array(224, -84, 202, -50, 36, -50, 30, -86, 4, -86, 10, -266, -152, -266, -152, -144, -520, -142, -516, -466, 518, -470, 522, -266, 448, -262, 362, -336, 216, -406)
+
+[node name="Border2" type="StaticBody2D" parent="HouseBasement"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseBasement/Border2"]
+polygon = PackedVector2Array(-82, -24, -86, 184, -482, 190, -476, -26)
+
+[node name="Border3" type="StaticBody2D" parent="HouseBasement"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseBasement/Border3"]
+polygon = PackedVector2Array(-514, 192, -486, 252, -432, 296, -350, 314, -246, 304, -250, 272, -226, 268, -224, 310, -140, 378, -140, 356, -124, 358, -124, 388, -66, 410, -10, 414, 38, 412, 92, 384, 84, 338, 112, 340, 108, 380, 158, 440, 212, 464, 318, 456, 324, 388, 344, 392, 346, 392, 352, 454, 372, 472, 436, 476, 442, 412, 462, 416, 458, 474, 462, 484, -524, 478)
 
 [node name="Player" parent="." instance=ExtResource("2_j0p05")]
 position = Vector2(-3069, -1174)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.5, 3.5)
 position_smoothing_enabled = true
 script = ExtResource("2_5nsto")
 
@@ -401,14 +492,16 @@ player = NodePath("../../..")
 [node name="DialogManager" parent="Player/Camera2D/DialogCanvasLayer" instance=ExtResource("6_y7y61")]
 
 [node name="Key" parent="." instance=ExtResource("2_45d1s")]
-position = Vector2(516, 397)
+position = Vector2(157, -574)
 
 [node name="keyInteractable" parent="." instance=ExtResource("7_y7y61")]
-position = Vector2(307, 388)
+position = Vector2(-2868, -1162)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="Map/TeleportToShed" to="Map/TeleportToShed" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/TeleportToF1" to="Map/TeleportToF1" method="_on_body_entered"]
 [connection signal="body_entered" from="Shed/TeleportFromShed" to="Shed/TeleportFromShed" method="_on_body_entered"]
+[connection signal="Saw" from="Shed/Saw" to="Shed/saw_Interactable" method="_on_saw_saw"]
 [connection signal="body_entered" from="HouseFloor1/TeleportFromF1" to="HouseFloor1/TeleportFromF1" method="_on_body_entered"]
 [connection signal="body_entered" from="HouseFloor1/TeleportToF2" to="HouseFloor1/TeleportToF2" method="_on_body_entered"]
 [connection signal="body_entered" from="HouseFloor2/TeleportFromF2" to="HouseFloor2/TeleportFromF2" method="_on_body_entered"]

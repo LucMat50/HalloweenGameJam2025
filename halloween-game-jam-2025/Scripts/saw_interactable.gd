@@ -3,7 +3,7 @@ extends Area2D
 #VARIABLES
 #@onready var slots = $Inv_UI/NinePatchRect/GridContainer.get_children()
 var player_in_range:bool = false
-var player_has_key:bool = false
+var player_has_saw:bool = false
 
 #FUNCTIONS
 func _on_body_entered(body: Node2D) -> void:
@@ -15,19 +15,23 @@ func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
 
-func _on_key_key_1() -> void:
-	player_has_key = true
-	print("Player has key!")
-	
 #CHECKS IF PLAYER HAS COLLECTED KEY1
 func _process(_delta: float):
 	if player_in_range and Input.is_action_just_pressed("interact"):
-		if player_has_key:
+		if player_has_saw:
 			print("Open")
-			#allows the player to teleport (get out) of the shed
-			var target_node = $"../Shed/TeleportFromShed"
-			if target_node:
-				target_node.visible = true
-			else:
-				print("Target node not found:", $"../Shed/TeleportFromShed")
+			
+			#teleport the key to it's position
+			if $"../../Key":
+				var target_node = $"../../Key"
+				if target_node:
+					target_node.global_position = global_position
+					print("Saw moved to target position:", global_position)
+				else:
+					print("Target node not found:", $"../../Key")
+			
 			queue_free()
+
+func _on_saw_saw() -> void:
+	player_has_saw = true
+	print("Player has saw!")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccpt6cbafs4v4"]
+
+[ext_resource type="Script" uid="uid://8fknewqn6oue" path="res://Scripts/saw_interactable.gd" id="1_vtypo"]
+[ext_resource type="Texture2D" uid="uid://nyyemjhak8if" path="res://Assets/Map/Deer.webp" id="2_vtypo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vtypo"]
+radius = 51.24451
+
+[node name="saw_Interactable" type="Area2D"]
+script = ExtResource("1_vtypo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1.4305115e-06, -1.1920929e-06)
+scale = Vector2(0.48437503, 0.5)
+texture = ExtResource("2_vtypo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.684342e-14)
+shape = SubResource("CircleShape2D_vtypo")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-19, 39, -12, 30, -7, 19, -7, 1, -7, -13, 9, -8, 16, -14, 4, -29, 17, -51, 18, -67, -11, -61, -22, -44, -24, 56, -20, 56)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
