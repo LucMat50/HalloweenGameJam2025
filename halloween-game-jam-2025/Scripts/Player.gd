@@ -4,8 +4,8 @@ extends CharacterBody2D
 #teleport code
 var can_tp = true
 
-@export var walk_speed : int = 50
-@export var sprint_speed : int = 90
+@export var walk_speed : int = 70
+@export var sprint_speed : int = 110
 @export var animation_tree : AnimationTree
 
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D

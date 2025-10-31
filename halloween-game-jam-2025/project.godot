@@ -23,9 +23,13 @@ PuzzleManager="*res://Scripts/PuzzleManager.gd"
 [dialogic]
 
 directories/dch_directory={
-"DebugCharacter": "res://Dialogic/Characters/DebugCharacter.dch"
+"Cow": "res://Dialogic/Characters/Cow.dch",
+"DebugCharacter": "res://Dialogic/Characters/DebugCharacter.dch",
+"Pig": "res://Dialogic/Characters/Pig.dch",
+"Player": "res://Dialogic/Characters/Player.dch"
 }
 directories/dtl_directory={
+"Animals": "res://Dialogic/Timelines/Animals.dtl",
 "Blueprints": "res://Dialogic/Timelines/Items/Blueprints.dtl",
 "Bucket": "res://Dialogic/Timelines/Items/Bucket.dtl",
 "Butchers Notes": "res://Dialogic/Timelines/Items/Butchers Notes.dtl",

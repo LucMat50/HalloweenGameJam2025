@@ -1,0 +1,34 @@
+[signal arg="start"]
+Oh…What? What happened to them?
+join Pig center [animation="Fade In" length="0.3"]
+Pig: "Hey, be careful. I don’t know how long until Daron comes back."
+The Pig spoke in a raspy voice.
+leave Pig [animation="Fade Out" length="0.3"]
+join Player center [animation="Fade In" length="0.3"]
+Player: "Daron? That makes sense, so he’s the one that kidnapped me."
+leave Player [animation="Fade Out" length="0.3"]
+join Cow center [animation="Fade In" length="0.3"]
+Cow: “Help…”
+The Cow spoke weakly.
+leave Cow [animation="Fade Out" length="0.3"]
+join Player center [animation="Fade In" length="0.3"]
+Player: “Oh my God…How did this happen to you guys?”
+leave Player [animation="Fade Out" length="0.3"]
+join Pig left [animation="Fade In" length="0.3"]
+join Cow right [animation="Fade In" length="0.3"]
+Pig: “He did this to us, I didn’t think he’d be so sensitive over a joke that he turned us into ones…”
+Cow:  “Please help us, we need water…”
+leave --All-- [animation="Fade Out" length="0.3"]
+join Player center [animation="Fade In" length="0.3"]
+“Water? Don’t you want to escape?”
+leave --All-- [animation="Fade Out" length="0.3"]
+join Pig left [animation="Fade In" length="0.3"]
+join Cow right [animation="Fade In" length="0.3"]
+The Pig shakes their head.
+Pig: “I don’t want anyone to see me like this, but I do want to see Daron get what he deserves. You need to avenge us…”
+Cow: “Water…Can you please get us water?”
+Player: “Can you guys help me escape?”
+Pig: “Only if you get us water first…”
+leave --All-- [animation="Fade Out" length="0.3"]
+[signal arg="end"]
+[end_timeline]

@@ -19,10 +19,10 @@ func start_dialog(timeline : String):
 	
 func show_image(image : CompressedTexture2D):
 	if image:
-		visible = true
+		item_image.visible = true
 		item_image.texture = image
 	else:
-		visible = false
+		item_image.visible = false
 
 func change_name(character) -> void:
 	if character:
@@ -31,5 +31,8 @@ func change_name(character) -> void:
 func on_dialogic_signal(argument : String):
 	match argument:
 		"end":
+			item_image.visible = false
 			visible = false
 			dialog_ended.emit()
+		"start":
+			visible = true

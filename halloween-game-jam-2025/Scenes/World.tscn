@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=39 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dygi07ramgsde" path="res://Assets/Map/HouseFloor1.webp" id="5_7yo87"]
 [ext_resource type="PackedScene" uid="uid://c51ng030ic7hg" path="res://Scenes/sawObject.tscn" id="5_8l3nt"]
 [ext_resource type="PackedScene" uid="uid://d3m4564clp5km" path="res://Inventory/inv_ui.tscn" id="5_p70al"]
+[ext_resource type="Texture2D" uid="uid://1u5h1fd1wd3s" path="res://Assets/Sprites/Cow_and_pig.png" id="5_r0dna"]
+[ext_resource type="Script" uid="uid://bopdkmil4mu6p" path="res://Scripts/animals_interactable.gd" id="6_b5aes"]
 [ext_resource type="PackedScene" uid="uid://ccpt6cbafs4v4" path="res://Scenes/saw_interactable.tscn" id="6_kwl8l"]
 [ext_resource type="Texture2D" uid="uid://dctpfbcmudq5t" path="res://Assets/Map/HouseFloor2.webp" id="6_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://dpoereb5qqcrc" path="res://Scenes/DialogManager.tscn" id="6_y7y61"]
@@ -41,6 +43,13 @@ size = Vector2(424.71487, 395.09937)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwt1y"]
 size = Vector2(20, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5aes"]
+size = Vector2(506.6667, 139.99992)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0dna"]
+radius = 113.333435
+height = 526.6665
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_op4cu"]
 size = Vector2(10, 462)
@@ -179,6 +188,26 @@ shape = SubResource("RectangleShape2D_rwt1y")
 
 [node name="Marker2D" type="Marker2D" parent="Map/TeleportToF1"]
 position = Vector2(20, 0)
+
+[node name="Animals" type="Sprite2D" parent="."]
+position = Vector2(283.99997, 269.99997)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_r0dna")
+script = ExtResource("6_b5aes")
+
+[node name="Area2D" type="Area2D" parent="Animals"]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/Area2D"]
+position = Vector2(13.333435, 83.333435)
+shape = SubResource("RectangleShape2D_b5aes")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Animals"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animals/StaticBody2D"]
+position = Vector2(6.666768, 3.333435)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_r0dna")
 
 [node name="Shed" type="Sprite2D" parent="."]
 position = Vector2(-3008, -1192)
@@ -479,6 +508,7 @@ position_smoothing_enabled = true
 script = ExtResource("2_5nsto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+layer = 4
 
 [node name="PauseMenu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_gjpho")]
 
@@ -490,6 +520,7 @@ offset_bottom = -263.0
 player = NodePath("../../..")
 
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+layer = 3
 
 [node name="DialogManager" parent="Player/Camera2D/DialogCanvasLayer" instance=ExtResource("6_y7y61")]
 
@@ -507,6 +538,8 @@ autostart = true
 
 [connection signal="body_entered" from="Map/TeleportToShed" to="Map/TeleportToShed" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/TeleportToF1" to="Map/TeleportToF1" method="_on_body_entered"]
+[connection signal="body_entered" from="Animals/Area2D" to="Animals" method="_on_body_entered"]
+[connection signal="body_exited" from="Animals/Area2D" to="Animals" method="_body_exited"]
 [connection signal="body_entered" from="Shed/TeleportFromShed" to="Shed/TeleportFromShed" method="_on_body_entered"]
 [connection signal="Saw" from="Shed/Saw" to="Shed/saw_Interactable" method="_on_saw_saw"]
 [connection signal="body_entered" from="HouseFloor1/TeleportFromF1" to="HouseFloor1/TeleportFromF1" method="_on_body_entered"]

@@ -16,6 +16,7 @@
 script = ExtResource("2_rmwhm")
 scene = ExtResource("1_sregi")
 overrides = {
+"canvas_layer": "3.0",
 "global_bg_color": "Color(0, 0, 0, 0)"
 }
 
@@ -84,4 +85,4 @@ layer_info = {
 "16": SubResource("Resource_kb3eb"),
 "17": SubResource("Resource_5qvfx")
 }
-metadata/_latest_layer = "13"
+metadata/_latest_layer = "11"
