@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=40 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://ct36unx77byra" path="res://Assets/Map/HouseBasement.webp" id="9_xiqgv"]
 [ext_resource type="Texture2D" uid="uid://b7jxbgsfcptg1" path="res://Assets/Map/Upstairs.webp" id="10_rwt1y"]
 [ext_resource type="Texture2D" uid="uid://bmi1q78qaut5j" path="res://Assets/Map/Stairs_basement_and_1st_floor.webp" id="10_waglr"]
+[ext_resource type="PackedScene" uid="uid://b4we08t7qajtk" path="res://Scenes/fade_transition.tscn" id="19_w0bku"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2d71"]
 size = Vector2(906.8224, 10)
@@ -518,6 +519,8 @@ offset_top = 353.0
 offset_right = -468.0
 offset_bottom = -263.0
 player = NodePath("../../..")
+
+[node name="fade_transition" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("19_w0bku")]
 
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 3
