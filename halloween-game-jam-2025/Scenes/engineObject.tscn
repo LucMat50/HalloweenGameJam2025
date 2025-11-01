@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cu15q0k8r3jwj"]
+
+[ext_resource type="Texture2D" uid="uid://4c1b7h0wbc5" path="res://Assets/Sprites/Engine.png" id="1_866o7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ifnxs"]
+radius = 51.009804
+
+[node name="Engine" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_866o7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ifnxs")
