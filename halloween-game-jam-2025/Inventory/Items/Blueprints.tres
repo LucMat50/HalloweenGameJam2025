@@ -6,11 +6,12 @@
 
 [sub_resource type="Resource" id="Resource_q1g8c"]
 script = ExtResource("1_ewk48")
+active = true
 metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
 
 [resource]
 script = ExtResource("2_xsgoc")
-name = "Blueprint"
+name = "Blueprints"
 texture = ExtResource("3_xsgoc")
 description_timeline = "Blueprints"
 puzzle = SubResource("Resource_q1g8c")

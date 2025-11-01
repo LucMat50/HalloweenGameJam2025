@@ -26,8 +26,11 @@ func _process(_delta: float):
 			print("Open")
 			#allows the player to teleport (get out) of the shed
 			var target_node = $"../Shed/TeleportFromShed"
+			var target_collsion = $"../Shed/TeleportFromShed/CollisionShape2D"
 			if target_node:
 				target_node.visible = true
+			if target_collsion:
+				target_collsion.disabled = false
 			else:
 				print("Target node not found:", $"../Shed/TeleportFromShed")
 			queue_free()

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgb470um71t6r"]
+
+[ext_resource type="Texture2D" uid="uid://gek1g5kr5e2g" path="res://Assets/Map/Rug.png" id="1_cngco"]
+[ext_resource type="Script" uid="uid://d31ktpyiumyg3" path="res://Scenes/rug_interactable.gd" id="1_k31xl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k31xl"]
+size = Vector2(262, 318)
+
+[node name="RugInteractable" type="Area2D"]
+script = ExtResource("1_k31xl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_cngco")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k31xl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

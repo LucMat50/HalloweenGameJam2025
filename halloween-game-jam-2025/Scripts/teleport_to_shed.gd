@@ -13,6 +13,10 @@ func _on_body_entered(body: Node2D) -> void:
 		if not body.can_tp:
 			return
 		body.can_tp = false
+		#play fade animation
+		$"../../Player/Camera2D/CanvasLayer/fade_transition".show()
+		$"../../FadeTimer".start()
+		$"../../Player/Camera2D/CanvasLayer/fade_transition"/AnimationPlayer.play("fade_in")
 		#TP to marker
 		var tp_point = landing_zone.get_node("Marker2D").global_position
 		body.global_position = tp_point
@@ -25,3 +29,8 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_animals_animals_done() -> void:
 	if is_window:
 		can_window = true
+
+
+func _on_fade_timer_timeout() -> void:
+	$"../../Player/Camera2D/CanvasLayer/fade_transition"/AnimationPlayer.play("fade_out")
+	$"../../Player/Camera2D/CanvasLayer/fade_transition".hide()

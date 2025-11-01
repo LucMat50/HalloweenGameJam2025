@@ -19,10 +19,10 @@ func update_slots():
 	print("slotttt")
 	print("inv.slots.size():", inv.slots.size())
 	print("slots.size():", slots.size())
-	for i in range(min(inv.slots.size(), slots.size())):
+	"""for i in range(min(inv.slots.size(), slots.size())):
 		print("Slot", i, "item", inv.slots[i].item)
 		print("Updating slot node:", slots[i].name)
-		slots[i].update(inv.slots[i])
+		slots[i].update(inv.slots[i])"""
 
 func _process(_delta: float):
 	if Input.is_action_just_pressed("i"):

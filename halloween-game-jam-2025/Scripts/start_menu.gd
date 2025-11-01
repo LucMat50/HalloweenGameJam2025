@@ -8,9 +8,9 @@ func _on_play_pressed() -> void:
 	$fade_transition.show()
 	$fade_transition/fade_timer.start()
 	$fade_transition/AnimationPlayer.play("fade_in")
-	print("Started")
-	for child in get_children():
-		print("Child of StartMenu:", child.name)
+	#print("Started")
+	#for child in get_children():
+		#print("Child of StartMenu:", child.name)
 
 
 func _on_options_pressed() -> void:
