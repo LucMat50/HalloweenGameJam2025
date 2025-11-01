@@ -3,6 +3,7 @@ extends Area2D
 @export var item: InvItem
 var player = null
 var player_in_range = false
+var open = false
 @onready var open_closet = $Open
 
 func _ready():
