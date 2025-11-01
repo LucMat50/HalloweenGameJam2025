@@ -1,3 +1,275 @@
-[gd_scene format=3 uid="uid://cx4ve5skieo0c"]
+[gd_scene load_steps=18 format=3 uid="uid://cx4ve5skieo0c"]
+
+[ext_resource type="Script" uid="uid://bhgtoyb6nwduw" path="res://Scripts/bad_end_cutscene.gd" id="1_1hs0e"]
+[ext_resource type="Texture2D" uid="uid://cmwhwan4m3r5w" path="res://Assets/Sprites/Butcher_Sprite.png" id="1_gc1qs"]
+[ext_resource type="Texture2D" uid="uid://8afb1x2368w8" path="res://Assets/Sprites/Butcher_Sprite_Hand.png" id="2_e8vcc"]
+[ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="3_1hs0e"]
+
+[sub_resource type="Animation" id="Animation_gc1qs"]
+resource_name = "Grab"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e8vcc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1hs0e"]
+_data = {
+&"Grab": SubResource("Animation_gc1qs"),
+&"RESET": SubResource("Animation_e8vcc")
+}
+
+[sub_resource type="Animation" id="Animation_q6mhg"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tugh2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fj0pf"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wsyqs"]
+resource_name = "RESET_black"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3acju"]
+_data = {
+&"RESET": SubResource("Animation_tugh2"),
+&"RESET_black": SubResource("Animation_wsyqs"),
+&"fade_in": SubResource("Animation_fj0pf"),
+&"fade_out": SubResource("Animation_q6mhg")
+}
+
+[sub_resource type="Animation" id="Animation_1hs0e"]
+resource_name = "fade_in"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_p360y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3acju"]
+resource_name = "fade_out"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y2wdp"]
+resource_name = "RESET_white"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q6mhg"]
+_data = {
+&"RESET": SubResource("Animation_p360y"),
+&"RESET_white": SubResource("Animation_y2wdp"),
+&"fade_in": SubResource("Animation_1hs0e"),
+&"fade_out": SubResource("Animation_3acju")
+}
 
 [node name="BadEndCutscene" type="Node2D"]
+script = ExtResource("1_1hs0e")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 638.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Butcher" type="Sprite2D" parent="Control"]
+position = Vector2(576, 325)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_gc1qs")
+
+[node name="GameOver" type="Sprite2D" parent="Control"]
+position = Vector2(576, 325)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_1hs0e")
+
+[node name="Hand" type="Sprite2D" parent="."]
+position = Vector2(425.00003, 320)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_e8vcc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hand"]
+libraries = {
+&"": SubResource("AnimationLibrary_1hs0e")
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect2"]
+libraries = {
+&"": SubResource("AnimationLibrary_3acju")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_3acju")
+}
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = 1149.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 58
+text = "He's decided to make 
+you into something more..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label2"]
+libraries = {
+&"": SubResource("AnimationLibrary_q6mhg")
+}
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = 1149.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 58
+text = "Something doesn't feel right..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_q6mhg")
+}
+
+[connection signal="animation_finished" from="Hand/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="ColorRect2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Label2/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="Label/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
