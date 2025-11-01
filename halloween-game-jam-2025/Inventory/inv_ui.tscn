@@ -18,8 +18,9 @@ script = ExtResource("1_605em")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
+offset_top = -16.0
 offset_right = 212.0
-offset_bottom = 32.0
+offset_bottom = 64.0
 texture = ExtResource("2_actet")
 
 [node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
@@ -53,4 +54,22 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="inv_UI_slot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_ltxgc")]
+layout_mode = 2
+
+[node name="inv_UI_slot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_ltxgc")]
+layout_mode = 2
+
+[node name="inv_UI_slot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_ltxgc")]
+layout_mode = 2
+
+[node name="inv_UI_slot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_ltxgc")]
+layout_mode = 2
+
+[node name="inv_UI_slot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_ltxgc")]
+layout_mode = 2
+
+[node name="inv_UI_slot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_ltxgc")]
+layout_mode = 2
+
+[node name="inv_UI_slot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_ltxgc")]
 layout_mode = 2
