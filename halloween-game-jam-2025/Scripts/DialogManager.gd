@@ -27,6 +27,9 @@ func show_image(image : CompressedTexture2D):
 func change_name(character) -> void:
 	if character:
 		name_label.text = character.display_name
+		$MarginContainer/DialogBox.visible = true
+	else:
+		$MarginContainer/DialogBox.visible = false
 	
 func on_dialogic_signal(argument : String):
 	match argument:

@@ -1,6 +1,7 @@
 extends Sprite2D
 
 var player_in_range:bool = false
+var has_interacted : bool = false
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
@@ -12,5 +13,6 @@ func _body_exited(body: Node2D) -> void:
 		player_in_range = false
 
 func _process(_delta: float):
-	if player_in_range and Input.is_action_just_pressed("interact"):
+	if player_in_range and Input.is_action_just_pressed("interact") and !has_interacted:
 		Dialogic.start("Animals")
+		has_interacted = true

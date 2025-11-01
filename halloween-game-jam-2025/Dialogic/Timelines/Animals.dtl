@@ -17,7 +17,7 @@ leave Player [animation="Fade Out" length="0.3"]
 join Pig left [animation="Fade In" length="0.3"]
 join Cow right [animation="Fade In" length="0.3"]
 Pig: “He did this to us, I didn’t think he’d be so sensitive over a joke that he turned us into ones…”
-Cow:  “Please help us, we need water…”
+Cow: “Please help us, we need water…”
 leave --All-- [animation="Fade Out" length="0.3"]
 join Player center [animation="Fade In" length="0.3"]
 “Water? Don’t you want to escape?”
@@ -30,5 +30,6 @@ Cow: “Water…Can you please get us water?”
 Player: “Can you guys help me escape?”
 Pig: “Only if you get us water first…”
 leave --All-- [animation="Fade Out" length="0.3"]
+[signal arg="activateBucket"]
 [signal arg="end"]
 [end_timeline]
