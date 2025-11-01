@@ -15,18 +15,18 @@
 [ext_resource type="Texture2D" uid="uid://1u5h1fd1wd3s" path="res://Assets/Sprites/Cow_and_pig.png" id="5_r0dna"]
 [ext_resource type="Script" uid="uid://bopdkmil4mu6p" path="res://Scripts/animals_interactable.gd" id="6_b5aes"]
 [ext_resource type="PackedScene" uid="uid://ccpt6cbafs4v4" path="res://Scenes/saw_interactable.tscn" id="6_kwl8l"]
-[ext_resource type="Texture2D" uid="uid://dctpfbcmudq5t" path="res://Assets/Map/HouseFloor2.webp" id="6_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://dpoereb5qqcrc" path="res://Scenes/DialogManager.tscn" id="6_y7y61"]
 [ext_resource type="PackedScene" uid="uid://ypru5q0186v8" path="res://Scenes/key_interactable.tscn" id="7_y7y61"]
-[ext_resource type="PackedScene" uid="uid://b4yjlbw4sv1qc" path="res://Scenes/hoseObject.tscn" id="8_l11rc"]
+[ext_resource type="PackedScene" path="res://Scenes/hoseObject.tscn" id="8_l11rc"]
 [ext_resource type="Texture2D" uid="uid://ct36unx77byra" path="res://Assets/Map/HouseBasement.webp" id="9_xiqgv"]
 [ext_resource type="Texture2D" uid="uid://b7jxbgsfcptg1" path="res://Assets/Map/Upstairs.webp" id="10_rwt1y"]
 [ext_resource type="Texture2D" uid="uid://bmi1q78qaut5j" path="res://Assets/Map/Stairs_basement_and_1st_floor.webp" id="10_waglr"]
+[ext_resource type="Texture2D" uid="uid://cwt23w7mxoxjg" path="res://Assets/Map/HouseFloor2.png" id="14_33kev"]
 [ext_resource type="PackedScene" uid="uid://b4we08t7qajtk" path="res://Scenes/fade_transition.tscn" id="19_w0bku"]
-[ext_resource type="PackedScene" uid="uid://dt372jq7vuaic" path="res://Scenes/timer.tscn" id="23_0ao37"]
-[ext_resource type="PackedScene" uid="uid://cuo8d5llpt4fd" path="res://Scenes/bucketObject.tscn" id="24_d3ars"]
-[ext_resource type="PackedScene" uid="uid://0u41ae355ctf" path="res://Scenes/blueprintsObject.tscn" id="26_w86vl"]
-[ext_resource type="PackedScene" uid="uid://c0e70qhm8821w" path="res://Scenes/plushieObject.tscn" id="27_33kev"]
+[ext_resource type="PackedScene" path="res://Scenes/timer.tscn" id="23_0ao37"]
+[ext_resource type="PackedScene" path="res://Scenes/bucketObject.tscn" id="24_d3ars"]
+[ext_resource type="PackedScene" path="res://Scenes/blueprintsObject.tscn" id="26_w86vl"]
+[ext_resource type="PackedScene" path="res://Scenes/plushieObject.tscn" id="27_33kev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2d71"]
 size = Vector2(906.8224, 10)
@@ -384,55 +384,61 @@ shape = SubResource("RectangleShape2D_kwl8l")
 position = Vector2(88, 64)
 
 [node name="HouseFloor2" type="Sprite2D" parent="."]
-position = Vector2(-2939, 414)
+position = Vector2(-2936, 419)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_ti1bm")
+texture = ExtResource("14_33kev")
 
 [node name="Floor2WestBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(-470, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor2/Floor2WestBorder"]
+position = Vector2(-60, 2)
 shape = SubResource("RectangleShape2D_xiqgv")
 
 [node name="Floor2EastBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(470, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor2/Floor2EastBorder"]
+position = Vector2(60, -4)
 shape = SubResource("RectangleShape2D_xiqgv")
 
 [node name="Floor2NorthBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(0, -440)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor2/Floor2NorthBorder"]
+position = Vector2(-2, -30)
 shape = SubResource("RectangleShape2D_waglr")
 
 [node name="Floor2ASouthBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(0, 435)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor2/Floor2ASouthBorder"]
+position = Vector2(0, 57)
 shape = SubResource("RectangleShape2D_waglr")
 
 [node name="Border1" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(-19, -376)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor2/Border1"]
-polygon = PackedVector2Array(65, 30, 63, 106, -107, 108, -112, 29, -148, 31, -154, 104, -265, 108, -268, 64, -361, 68, -351, 135, -356, 149, -411, 150, -424, 75, -449, 74, -450, -62, 487, -64, 488, 27, 255, 30, 249, -6, 229, -6, 227, 115, 93, 113, 93, 30)
+polygon = PackedVector2Array(33, 56, 31, 194, -89, 192, -89, 56, -91, 112, -161, 112, -237, 112, -249, 112, -269, 112, -269, 154, -351, 154, -351, 228, -409, 228, -409, 154, -487, 154, -487, 112, -505, 112, -505, -92, 543, -90, 545, 24, 545, 90, 415, 92, 267, 94, 267, 112, 93, 113, 33, 112)
 
 [node name="BedBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(-345, 205)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor2/BedBorder"]
-polygon = PackedVector2Array(-121, -115, -91, -84, 184, -66, 170, 76, 156, 104, 136, 107, -105, 95, -124, 63)
+position = Vector2(-19, 125)
+polygon = PackedVector2Array(-142, -74, -124, -70, 182, -68, 180, 82, 180, 112, 136, 114, -142, 112, -144, 68)
 
 [node name="CatBedBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(-56, 230)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor2/CatBedBorder"]
-polygon = PackedVector2Array(-41, -73, 41, -71, 45, 52, -39, 60)
+position = Vector2(6, 148)
+polygon = PackedVector2Array(-42, -72, 46, -70, 46, 60, -42, 60)
 
 [node name="Stairs" type="Sprite2D" parent="HouseFloor2"]
-position = Vector2(335, -264)
-scale = Vector2(0.9071429, 1)
+position = Vector2(386.50018, -165)
+scale = Vector2(0.98928463, 1.0083333)
 texture = ExtResource("10_rwt1y")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="HouseFloor2/Stairs"]
@@ -460,10 +466,10 @@ shape = SubResource("RectangleShape2D_kwl8l")
 position = Vector2(134, -38)
 
 [node name="Blueprints" parent="." instance=ExtResource("26_w86vl")]
-position = Vector2(-3118, 240)
+position = Vector2(-3138, 293)
 
 [node name="Plushie" parent="." instance=ExtResource("27_33kev")]
-position = Vector2(-3132, 488)
+position = Vector2(-3146, 563)
 
 [node name="HouseBasement" type="Sprite2D" parent="."]
 position = Vector2(-1785, 1170)
