@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt372jq7vuaic"]
+
+[ext_resource type="Texture2D" uid="uid://e2cmfqnqhvoo" path="res://Assets/UI/timer.png" id="1_pvhx5"]
+[ext_resource type="Script" uid="uid://dbkl8koq4xndj" path="res://Scripts/timer.gd" id="1_ycw00"]
+
+[node name="Timer" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+script = ExtResource("1_ycw00")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(157, 57)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_pvhx5")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 48.0
+offset_right = 268.0
+offset_bottom = 113.0
+theme_override_font_sizes/font_size = 30
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="."]

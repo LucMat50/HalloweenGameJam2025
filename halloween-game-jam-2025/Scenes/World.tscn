@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=41 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://b7jxbgsfcptg1" path="res://Assets/Map/Upstairs.webp" id="10_rwt1y"]
 [ext_resource type="Texture2D" uid="uid://bmi1q78qaut5j" path="res://Assets/Map/Stairs_basement_and_1st_floor.webp" id="10_waglr"]
 [ext_resource type="PackedScene" uid="uid://b4we08t7qajtk" path="res://Scenes/fade_transition.tscn" id="19_w0bku"]
+[ext_resource type="PackedScene" uid="uid://dt372jq7vuaic" path="res://Scenes/timer.tscn" id="23_0ao37"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2d71"]
 size = Vector2(906.8224, 10)
@@ -522,6 +523,13 @@ player = NodePath("../../..")
 
 [node name="fade_transition" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("19_w0bku")]
 
+[node name="Timer" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("23_0ao37")]
+
+[node name="WorldTimer" type="Timer" parent="Player/Camera2D/CanvasLayer/Timer"]
+wait_time = 600.0
+one_shot = true
+autostart = true
+
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 3
 
@@ -534,11 +542,6 @@ position = Vector2(157, -574)
 position = Vector2(-2868, -1162)
 scale = Vector2(0.5, 0.5)
 
-[node name="WorldTimer" type="Timer" parent="."]
-wait_time = 600.0
-one_shot = true
-autostart = true
-
 [connection signal="body_entered" from="Map/TeleportToShed" to="Map/TeleportToShed" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/TeleportToF1" to="Map/TeleportToF1" method="_on_body_entered"]
 [connection signal="body_entered" from="Animals/Area2D" to="Animals" method="_on_body_entered"]
@@ -548,7 +551,7 @@ autostart = true
 [connection signal="body_entered" from="HouseFloor1/TeleportFromF1" to="HouseFloor1/TeleportFromF1" method="_on_body_entered"]
 [connection signal="body_entered" from="HouseFloor1/TeleportToF2" to="HouseFloor1/TeleportToF2" method="_on_body_entered"]
 [connection signal="body_entered" from="HouseFloor2/TeleportFromF2" to="HouseFloor2/TeleportFromF2" method="_on_body_entered"]
+[connection signal="timeout" from="Player/Camera2D/CanvasLayer/Timer/WorldTimer" to="." method="_on_world_timer_timeout"]
 [connection signal="dialog_ended" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_exit_dialog"]
 [connection signal="dialog_started" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_enter_dialog"]
 [connection signal="key1" from="Key" to="keyInteractable" method="_on_key_key_1"]
-[connection signal="timeout" from="WorldTimer" to="." method="_on_world_timer_timeout"]
