@@ -6,6 +6,7 @@ var currentMusic : AudioStream
 
 # PUT SOUND EFFECTS HERE AS PRELOADED AUDIO STREAMS 
 # ex: var title_music : AudioStream = preload("res://assets/audio/title_music.wav")
+var horror_ambience : AudioStream = preload("res://Assets/Audio/Music/horror_ambience.wav")
 
 func _ready() -> void:
 	add_child(backgroundMusicPlayer)
@@ -21,10 +22,14 @@ func changeMusic(music_name : String) -> void:
 	match music_name:
 		#ex:  "title":
 		#	currentMusic = title_music
-		pass
+		"horror_ambience":
+			currentMusic = horror_ambience
 	
 	backgroundMusicPlayer.stop()
 	backgroundMusicPlayer.stream = currentMusic
 	backgroundMusicPlayer.play()
 			
 	soundEffectsPlayer.play()
+	
+func pauseMusic() -> void:
+	backgroundMusicPlayer.stop()

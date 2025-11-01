@@ -36,6 +36,7 @@ directories/dtl_directory={
 "Butchers Notes": "res://Dialogic/Timelines/Items/Butchers Notes.dtl",
 "Compass": "res://Dialogic/Timelines/Items/Compass.dtl",
 "Engine": "res://Dialogic/Timelines/Items/Engine.dtl",
+"GoodEnding": "res://Dialogic/Timelines/Endings/GoodEnding.dtl",
 "Hose": "res://Dialogic/Timelines/Items/Hose.dtl",
 "Manual": "res://Dialogic/Timelines/Items/Manual.dtl",
 "Mounted Deer Head": "res://Dialogic/Timelines/Items/Mounted Deer Head.dtl",
