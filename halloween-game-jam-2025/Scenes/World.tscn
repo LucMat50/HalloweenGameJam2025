@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=45 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://b4we08t7qajtk" path="res://Scenes/fade_transition.tscn" id="19_w0bku"]
 [ext_resource type="PackedScene" uid="uid://dt372jq7vuaic" path="res://Scenes/timer.tscn" id="23_0ao37"]
 [ext_resource type="PackedScene" uid="uid://cuo8d5llpt4fd" path="res://Scenes/bucketObject.tscn" id="24_d3ars"]
+[ext_resource type="PackedScene" uid="uid://0u41ae355ctf" path="res://Scenes/blueprintsObject.tscn" id="26_w86vl"]
+[ext_resource type="PackedScene" uid="uid://c0e70qhm8821w" path="res://Scenes/plushieObject.tscn" id="27_33kev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2d71"]
 size = Vector2(906.8224, 10)
@@ -180,6 +182,7 @@ position = Vector2(-42, -60)
 collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseFloor1/TeleportFromF1")
+is_window = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Map/TeleportToF1"]
 self_modulate = Color(0, 0.65882355, 1, 1)
@@ -456,6 +459,12 @@ shape = SubResource("RectangleShape2D_kwl8l")
 [node name="Marker2D" type="Marker2D" parent="HouseFloor2/TeleportFromF2"]
 position = Vector2(134, -38)
 
+[node name="Blueprints" parent="." instance=ExtResource("26_w86vl")]
+position = Vector2(-3118, 240)
+
+[node name="Plushie" parent="." instance=ExtResource("27_33kev")]
+position = Vector2(-3132, 488)
+
 [node name="HouseBasement" type="Sprite2D" parent="."]
 position = Vector2(-1785, 1170)
 scale = Vector2(0.5, 0.5)
@@ -519,6 +528,7 @@ script = ExtResource("2_5nsto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 4
+visible = false
 
 [node name="PauseMenu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_gjpho")]
 
@@ -540,6 +550,7 @@ autostart = true
 
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 3
+visible = false
 
 [node name="DialogManager" parent="Player/Camera2D/DialogCanvasLayer" instance=ExtResource("6_y7y61")]
 
@@ -552,6 +563,7 @@ scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="Map/TeleportToShed" to="Map/TeleportToShed" method="_on_body_entered"]
 [connection signal="body_entered" from="Map/TeleportToF1" to="Map/TeleportToF1" method="_on_body_entered"]
+[connection signal="animals_done" from="Animals" to="Map/TeleportToF1" method="_on_animals_animals_done"]
 [connection signal="body_entered" from="Animals/Area2D" to="Animals" method="_on_body_entered"]
 [connection signal="body_exited" from="Animals/Area2D" to="Animals" method="_body_exited"]
 [connection signal="Bucket" from="Bucket" to="hoseObject" method="_on_bucket_bucket"]

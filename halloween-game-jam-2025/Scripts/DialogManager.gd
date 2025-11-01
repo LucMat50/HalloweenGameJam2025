@@ -17,10 +17,14 @@ func start_dialog(timeline : String):
 	Dialogic.start(timeline)
 	dialog_started.emit()
 	
-func show_image(image : CompressedTexture2D):
+func show_image(image : CompressedTexture2D, scale_down : bool = false):
 	if image:
 		item_image.visible = true
 		item_image.texture = image
+		if scale_down:
+			item_image.scale = Vector2(0.1, 0.1)
+		else:
+			item_image.scale = Vector2(1, 1)
 	else:
 		item_image.visible = false
 

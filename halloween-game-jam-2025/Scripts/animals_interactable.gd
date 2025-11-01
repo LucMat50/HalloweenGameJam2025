@@ -5,6 +5,8 @@ var has_interacted : bool = false
 var bucket_filled : bool = false
 var puzzle2_done : bool = false
 
+signal animals_done
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print("Able to Interact")
@@ -22,6 +24,7 @@ func _process(_delta: float):
 		elif bucket_filled:
 			Dialogic.start("Animals2")
 			puzzle2_done = true
+			animals_done.emit()
 
 func _on_hose_object_bucket_filled() -> void:
 	bucket_filled = true
