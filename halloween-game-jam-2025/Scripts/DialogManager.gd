@@ -39,3 +39,4 @@ func on_dialogic_signal(argument : String):
 			dialog_ended.emit()
 		"start":
 			visible = true
+			dialog_started.emit()

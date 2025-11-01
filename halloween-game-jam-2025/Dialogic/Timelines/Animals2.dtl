@@ -1,0 +1,19 @@
+[signal arg="start"]
+join Pig left [animation="Fade In" length="0.3"]
+join Cow right [animation="Fade In" length="0.3"]
+PigAndCow: "Thank you."
+The “animals” drink the water.
+leave --All-- [animation="Fade Out" length="0.3"]
+join Player center [animation="Fade In" length="0.3"]
+Player: “Can you please help me now?”
+join Pig center [animation="Fade In" length="0.3"]
+Pig: “Yes, you need to get the truck started. It’ll get you away from here fast. The keys to the truck might be in the house though.”
+leave Pig [animation="Fade Out" length="0.3"]
+join Player center [animation="Fade In" length="0.3"]
+Player: “Thank you, I will avenge you guys by putting this sick man away.”
+leave Player [animation="Fade Out" length="0.3"]
+join Cow center [animation="Fade In" length="0.3"]
+Cow: “Please hurry!”
+leave --All-- [animation="Fade Out" length="0.3"]
+[signal arg="end"]
+[end_timeline]

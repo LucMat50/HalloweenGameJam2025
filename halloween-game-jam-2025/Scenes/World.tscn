@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=43 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://dctpfbcmudq5t" path="res://Assets/Map/HouseFloor2.webp" id="6_ti1bm"]
 [ext_resource type="PackedScene" uid="uid://dpoereb5qqcrc" path="res://Scenes/DialogManager.tscn" id="6_y7y61"]
 [ext_resource type="PackedScene" uid="uid://ypru5q0186v8" path="res://Scenes/key_interactable.tscn" id="7_y7y61"]
+[ext_resource type="PackedScene" uid="uid://b4yjlbw4sv1qc" path="res://Scenes/hoseObject.tscn" id="8_l11rc"]
 [ext_resource type="Texture2D" uid="uid://ct36unx77byra" path="res://Assets/Map/HouseBasement.webp" id="9_xiqgv"]
 [ext_resource type="Texture2D" uid="uid://b7jxbgsfcptg1" path="res://Assets/Map/Upstairs.webp" id="10_rwt1y"]
 [ext_resource type="Texture2D" uid="uid://bmi1q78qaut5j" path="res://Assets/Map/Stairs_basement_and_1st_floor.webp" id="10_waglr"]
@@ -213,7 +214,10 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_r0dna")
 
 [node name="Bucket" parent="." instance=ExtResource("24_d3ars")]
-position = Vector2(865, 351)
+position = Vector2(147, 21)
+
+[node name="hoseObject" parent="." instance=ExtResource("8_l11rc")]
+position = Vector2(418, 618)
 
 [node name="Shed" type="Sprite2D" parent="."]
 position = Vector2(-3008, -1192)
@@ -550,6 +554,8 @@ scale = Vector2(0.5, 0.5)
 [connection signal="body_entered" from="Map/TeleportToF1" to="Map/TeleportToF1" method="_on_body_entered"]
 [connection signal="body_entered" from="Animals/Area2D" to="Animals" method="_on_body_entered"]
 [connection signal="body_exited" from="Animals/Area2D" to="Animals" method="_body_exited"]
+[connection signal="Bucket" from="Bucket" to="hoseObject" method="_on_bucket_bucket"]
+[connection signal="bucket_filled" from="hoseObject" to="Animals" method="_on_hose_object_bucket_filled"]
 [connection signal="body_entered" from="Shed/TeleportFromShed" to="Shed/TeleportFromShed" method="_on_body_entered"]
 [connection signal="Saw" from="Shed/Saw" to="Shed/saw_Interactable" method="_on_saw_saw"]
 [connection signal="body_entered" from="HouseFloor1/TeleportFromF1" to="HouseFloor1/TeleportFromF1" method="_on_body_entered"]

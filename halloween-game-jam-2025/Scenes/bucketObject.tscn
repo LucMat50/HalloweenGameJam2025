@@ -1,31 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuo8d5llpt4fd"]
+[gd_scene load_steps=5 format=3 uid="uid://cuo8d5llpt4fd"]
 
 [ext_resource type="Script" uid="uid://b177ddefxkb1w" path="res://Scripts/bucket_interactable.gd" id="1_0kog1"]
 [ext_resource type="Texture2D" uid="uid://iht1cpj5jhs5" path="res://Assets/Sprites/Bucket_.png" id="1_abps5"]
-[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_860sg"]
-[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_gsthw"]
-
-[sub_resource type="Resource" id="Resource_860sg"]
-script = ExtResource("2_gsthw")
-metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
-
-[sub_resource type="Resource" id="Resource_gsthw"]
-script = ExtResource("2_860sg")
-name = " Bucket"
-texture = ExtResource("1_abps5")
-description_timeline = "Bucket"
-puzzle = SubResource("Resource_860sg")
-metadata/_custom_type_script = "uid://cpocwgcs2t07p"
+[ext_resource type="Resource" uid="uid://dxxp108a4eo7a" path="res://Inventory/Items/Bucket.tres" id="2_0kog1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ui7rg"]
-radius = 29.068884
+radius = 21.023796
 
 [node name="Bucket" type="Area2D"]
 script = ExtResource("1_0kog1")
-item = SubResource("Resource_gsthw")
+item = ExtResource("2_0kog1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.35, 0.35)
 texture = ExtResource("1_abps5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=6 format=3 uid="uid://c13u7ix66ca1k"]
+
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="1_0xh2p"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="1_tnokc"]
+[ext_resource type="Texture2D" uid="uid://d0ssgiegr4i7s" path="res://Assets/Sprites/Hose.png" id="3_4ya8x"]
+[ext_resource type="Resource" uid="uid://dxxp108a4eo7a" path="res://Inventory/Items/Bucket.tres" id="3_ecx74"]
+
+[sub_resource type="Resource" id="Resource_ecx74"]
+script = ExtResource("1_0xh2p")
+requiredItems = Array[ExtResource("1_tnokc")]([ExtResource("3_ecx74")])
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[resource]
+script = ExtResource("1_tnokc")
+name = " Hose"
+texture = ExtResource("3_4ya8x")
+description_timeline = "Hose"
+puzzle = SubResource("Resource_ecx74")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"

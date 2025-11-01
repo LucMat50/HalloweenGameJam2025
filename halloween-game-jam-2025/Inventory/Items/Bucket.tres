@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=5 format=3 uid="uid://dxxp108a4eo7a"]
+
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="1_ci8dk"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_e47if"]
+[ext_resource type="Texture2D" uid="uid://iht1cpj5jhs5" path="res://Assets/Sprites/Bucket_.png" id="3_iqi6p"]
+
+[sub_resource type="Resource" id="Resource_860sg"]
+script = ExtResource("1_ci8dk")
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[resource]
+script = ExtResource("2_e47if")
+name = " Bucket"
+texture = ExtResource("3_iqi6p")
+description_timeline = "Bucket"
+puzzle = SubResource("Resource_860sg")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"
