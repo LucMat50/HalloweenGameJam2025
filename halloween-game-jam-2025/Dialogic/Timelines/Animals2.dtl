@@ -15,5 +15,6 @@ leave Player [animation="Fade Out" length="0.3"]
 join Cow center [animation="Fade In" length="0.3"]
 Cow: “Please hurry!”
 leave --All-- [animation="Fade Out" length="0.3"]
+[signal arg="canFindBlueprint"]
 [signal arg="end"]
 [end_timeline]

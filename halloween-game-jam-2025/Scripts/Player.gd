@@ -49,7 +49,8 @@ func change_state(new_state) -> void:
 		return
 	current_state = new_state
 	if current_state == State.SPRINT:
-		camera.start_screen_shake(1.0, 1.0)
+		pass
+		#camera.start_screen_shake(1.0, 1.0)
 	
 func select_animation() -> void:
 	if velocity == Vector2.ZERO:

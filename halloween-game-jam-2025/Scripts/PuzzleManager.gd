@@ -23,7 +23,10 @@ func tryPuzzle(item : InvItem) -> bool:
 	if isPuzzleSolved(puzzle):
 		inv.insert(item)
 		dialog.start_dialog(item.description_timeline)
-		dialog.show_image(item.texture)
+		if item.name == "Blueprint":
+			dialog.show_image(item.texture, true)
+		else:
+			dialog.show_image(item.texture)
 		puzzle.solved = true
 		for p in puzzle.puzzlesToActivate:
 			activatePuzzle(p)

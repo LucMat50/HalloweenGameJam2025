@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://0u41ae355ctf"]
+
+[ext_resource type="Script" uid="uid://bh8lkv7i1mkgj" path="res://Scripts/blueprints_interactable.gd" id="1_fsygs"]
+[ext_resource type="Texture2D" uid="uid://w1vf0iuslwv2" path="res://Assets/Sprites/Blueprint.png" id="1_juh2w"]
+[ext_resource type="Resource" uid="uid://0ousti4agiv3" path="res://Inventory/Items/Blueprints.tres" id="2_0gy5i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsygs"]
+radius = 29.15476
+
+[node name="Blueprints" type="Area2D"]
+script = ExtResource("1_fsygs")
+item = ExtResource("2_0gy5i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("1_juh2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fsygs")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://c0e70qhm8821w"]
+
+[ext_resource type="Script" uid="uid://bh8lkv7i1mkgj" path="res://Scripts/blueprints_interactable.gd" id="1_amkjx"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_amkjx"]
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_lji7u"]
+[ext_resource type="Texture2D" uid="uid://bar271wo2bcyt" path="res://Assets/Sprites/Cat_plushie.png" id="2_tbk2l"]
+
+[sub_resource type="Resource" id="Resource_1qiai"]
+script = ExtResource("2_lji7u")
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[sub_resource type="Resource" id="Resource_lji7u"]
+script = ExtResource("2_amkjx")
+name = "Plushie"
+texture = ExtResource("2_tbk2l")
+description_timeline = "Plushie"
+puzzle = SubResource("Resource_1qiai")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fsygs"]
+radius = 29.15476
+
+[node name="Plushie" type="Area2D"]
+script = ExtResource("1_amkjx")
+item = SubResource("Resource_lji7u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_tbk2l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fsygs")
