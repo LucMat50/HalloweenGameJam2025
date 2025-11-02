@@ -206,7 +206,6 @@ collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseFloor1/TeleportFromF1")
 is_window = true
-can_window = true
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Map/TeleportToF1"]
 self_modulate = Color(0, 0.65882355, 1, 1)
@@ -711,5 +710,6 @@ scale = Vector2(0.5, 0.5)
 [connection signal="Manual" from="Player/Camera2D/ComboCanvasLayer/Control/SafeInput" to="Safe" method="_on_safe_input_manual"]
 [connection signal="Manual" from="Player/Camera2D/ComboCanvasLayer/Control/SafeInput" to="Player" method="_on_safe_input_manual"]
 [connection signal="Wrong" from="Player/Camera2D/ComboCanvasLayer/Control/SafeInput" to="Safe" method="_on_safe_input_wrong"]
+[connection signal="Wrong" from="Player/Camera2D/ComboCanvasLayer/Control/SafeInput" to="Player" method="_on_safe_input_wrong"]
 [connection signal="key1" from="Key" to="keyInteractable" method="_on_key_key_1"]
 [connection signal="timeout" from="FadeTimer" to="Map/TeleportToShed" method="_on_fade_timer_timeout"]

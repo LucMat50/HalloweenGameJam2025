@@ -1,6 +1,7 @@
 [signal arg="start"]
 Oh…What? What happened to them?
 join Pig center [animation="Fade In" length="0.3"]
+do AudioGlobal.playSoundEffect("oink")
 Pig: "Hey, be careful. I don’t know how long until Daron comes back."
 The Pig spoke in a raspy voice.
 leave Pig [animation="Fade Out" length="0.3"]
@@ -8,6 +9,7 @@ join Player center [animation="Fade In" length="0.3"]
 Player: "Daron? That makes sense, so he’s the one that kidnapped me."
 leave Player [animation="Fade Out" length="0.3"]
 join Cow center [animation="Fade In" length="0.3"]
+do AudioGlobal.playSoundEffect("moo")
 Cow: “Help…”
 The Cow spoke weakly.
 leave Cow [animation="Fade Out" length="0.3"]

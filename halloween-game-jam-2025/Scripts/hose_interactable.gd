@@ -26,6 +26,7 @@ func _process(_delta):
 		if item.puzzle.active:
 			if player and player.inv.hasItem(item.puzzle.requiredItems[0]):
 				player.dialog_manager.start_dialog(item.description_timeline)
+				AudioGlobal.playSoundEffect("hose")
 				bucket_filled.emit()
 		else:
 			player.dialog_manager.start_dialog("PrereqNotMetBasic")

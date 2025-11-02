@@ -87,3 +87,7 @@ func _on_safe_start_combo() -> void:
 func _on_safe_input_manual() -> void:
 	current_state = State.IDLE
 	entering_combo = false
+
+func _on_safe_input_wrong() -> void:
+	current_state = State.IDLE
+	entering_combo = false

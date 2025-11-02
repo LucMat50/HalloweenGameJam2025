@@ -24,6 +24,7 @@ func _process(_delta: float):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		if player_has_key:
 			print("Open")
+			AudioGlobal.playSoundEffect("door_open")
 			#allows the player to teleport (get out) of the shed
 			var target_node = $"../Shed/TeleportFromShed"
 			var target_collsion = $"../Shed/TeleportFromShed/CollisionShape2D"
