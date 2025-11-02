@@ -9,6 +9,7 @@ var fading_in = false
 @onready var label2_animation = $Label2/AnimationPlayer
 
 func _ready() -> void:
+	AudioGlobal.changeMusic("horror_ambience")
 	label_animation.animation_finished.connect(_on_label_animation_finished)
 	colorRect_animation.animation_finished.connect(_on_colorRect_animation_finished)
 	hand_animation.animation_finished.connect(_on_hand_animation_finished)
