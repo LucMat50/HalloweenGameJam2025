@@ -5,7 +5,6 @@ var previous_valid_text = ""
 const ALLOWED_CHARACTERS = "0123456789"
 
 func _ready():
-	self.text_changed.connect(_on_text_changed)
 	self.text_submitted.connect(_on_text_submitted)
 
 func _on_text_changed(new_text: String):
