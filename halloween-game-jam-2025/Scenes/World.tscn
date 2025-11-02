@@ -29,6 +29,12 @@
 [ext_resource type="PackedScene" uid="uid://dhc2rj8l0be0j" path="res://Scenes/desk_note.tscn" id="17_0bcf6"]
 [ext_resource type="Texture2D" uid="uid://dcu3he7fkmpud" path="res://Assets/Map/Basement.png" id="18_33kev"]
 [ext_resource type="PackedScene" uid="uid://b4we08t7qajtk" path="res://Scenes/fade_transition.tscn" id="19_w0bku"]
+[ext_resource type="PackedScene" uid="uid://dt372jq7vuaic" path="res://Scenes/timer.tscn" id="23_0ao37"]
+[ext_resource type="PackedScene" uid="uid://cuo8d5llpt4fd" path="res://Scenes/bucketObject.tscn" id="24_d3ars"]
+[ext_resource type="PackedScene" uid="uid://0u41ae355ctf" path="res://Scenes/blueprintsObject.tscn" id="26_w86vl"]
+[ext_resource type="PackedScene" uid="uid://c0e70qhm8821w" path="res://Scenes/plushieObject.tscn" id="27_33kev"]
+[ext_resource type="PackedScene" uid="uid://cu15q0k8r3jwj" path="res://Scenes/engineObject.tscn" id="34_ao4cr"]
+[ext_resource type="PackedScene" uid="uid://d2n15mpsvwtp6" path="res://Scenes/truck_object.tscn" id="35_irg3d"]
 [ext_resource type="PackedScene" path="res://Scenes/timer.tscn" id="23_0ao37"]
 [ext_resource type="PackedScene" path="res://Scenes/bucketObject.tscn" id="24_d3ars"]
 [ext_resource type="PackedScene" uid="uid://bh83f6jfwyj62" path="res://Scenes/basement_note.tscn" id="25_ao4cr"]
@@ -102,7 +108,7 @@ script = ExtResource("1_mvfa8")
 
 [node name="theVoid" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
-position = Vector2(-1332.9999, 9.0000305)
+position = Vector2(-1444, -60.999992)
 scale = Vector2(5, 5)
 texture = ExtResource("1_5cjrv")
 
@@ -234,6 +240,9 @@ shape = SubResource("RectangleShape2D_b5aes")
 position = Vector2(6.666768, 3.333435)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_r0dna")
+
+[node name="Truck" parent="." instance=ExtResource("35_irg3d")]
+position = Vector2(751, 489)
 
 [node name="Bucket" parent="." instance=ExtResource("24_d3ars")]
 position = Vector2(147, 21)
@@ -603,6 +612,8 @@ shape = SubResource("RectangleShape2D_y1bqn")
 [node name="Marker2D" type="Marker2D" parent="HouseBasement/TeleportToF1"]
 position = Vector2(88, 64)
 
+[node name="Engine" parent="." instance=ExtResource("34_ao4cr")]
+position = Vector2(-1821, 1059)
 [node name="basement_note" parent="HouseBasement" instance=ExtResource("25_ao4cr")]
 position = Vector2(442, 244)
 
@@ -664,6 +675,7 @@ scale = Vector2(0.5, 0.5)
 [connection signal="body_entered" from="HouseFloor2/TeleportFromF2" to="HouseFloor2/TeleportFromF2" method="_on_body_entered"]
 [connection signal="Blueprint" from="Blueprints" to="HouseFloor1/RugInteractable" method="_on_blueprints_blueprint"]
 [connection signal="body_entered" from="HouseBasement/TeleportToF1" to="HouseBasement/TeleportToF1" method="_on_body_entered"]
+[connection signal="truckEngine" from="Engine" to="Truck" method="_on_engine_truck_engine"]
 [connection signal="timeout" from="Player/Camera2D/CanvasLayer/Timer/WorldTimer" to="." method="_on_world_timer_timeout"]
 [connection signal="dialog_ended" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_exit_dialog"]
 [connection signal="dialog_started" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_enter_dialog"]
