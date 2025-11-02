@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=47 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -21,7 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://b7jxbgsfcptg1" path="res://Assets/Map/Upstairs.webp" id="10_rwt1y"]
 [ext_resource type="Texture2D" uid="uid://bmi1q78qaut5j" path="res://Assets/Map/Stairs_basement_and_1st_floor.webp" id="10_waglr"]
 [ext_resource type="Texture2D" uid="uid://cwt23w7mxoxjg" path="res://Assets/Map/HouseFloor2.png" id="14_33kev"]
-[ext_resource type="PackedScene" uid="uid://ba2suifail81f" path="res://Scenes/closet_safeObject.tscn" id="16_g01fq"]
+[ext_resource type="PackedScene" uid="uid://ba2suifail81f" path="res://Scenes/safeObject.tscn" id="16_g01fq"]
+[ext_resource type="PackedScene" uid="uid://c840rvx47f5ym" path="res://Scenes/desk_note.tscn" id="17_0bcf6"]
 [ext_resource type="Texture2D" uid="uid://dcu3he7fkmpud" path="res://Assets/Map/Basement.png" id="18_33kev"]
 [ext_resource type="PackedScene" uid="uid://b4we08t7qajtk" path="res://Scenes/fade_transition.tscn" id="19_w0bku"]
 [ext_resource type="PackedScene" path="res://Scenes/timer.tscn" id="23_0ao37"]
@@ -265,7 +266,6 @@ position = Vector2(-7, -171)
 polygon = PackedVector2Array(311, 62, 131, 64, -171, 64, -220, 64, -203, 80, -199, 89, -205, 91, -210, 99, -216, 101, -235, 94, -253, 93, -259, 119, -259, 163, -262, 180, -270, 191, -287, 214, -289, -54, 308, -55)
 
 [node name="TeleportFromShed" type="Area2D" parent="Shed" node_paths=PackedStringArray("landing_zone")]
-visible = false
 position = Vector2(280, 60)
 collision_layer = 2
 script = ExtResource("3_kn06e")
@@ -455,24 +455,28 @@ landing_zone = NodePath("../../HouseFloor1/TeleportToF2")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="HouseFloor2/TeleportFromF2"]
 self_modulate = Color(0, 0.76862746, 0, 1)
-position = Vector2(-0.25637817, -6.999998)
+position = Vector2(53.99997, 28.000002)
 scale = Vector2(19.776073, 55.999992)
 mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor2/TeleportFromF2"]
-position = Vector2(7.5, -21.5)
+position = Vector2(50, 28)
 shape = SubResource("RectangleShape2D_kwl8l")
 
 [node name="Marker2D" type="Marker2D" parent="HouseFloor2/TeleportFromF2"]
 position = Vector2(134, -38)
 
 [node name="Blueprints" parent="." instance=ExtResource("26_w86vl")]
-position = Vector2(-3098, 293)
+position = Vector2(-3028, 319)
+
+[node name="DeskNote" parent="." instance=ExtResource("17_0bcf6")]
+position = Vector2(-3137, 292)
+scale = Vector2(0.5, 0.5)
 
 [node name="Plushie" parent="." instance=ExtResource("27_33kev")]
 position = Vector2(-3146, 563)
 
-[node name="Closet_Safe" parent="." instance=ExtResource("16_g01fq")]
+[node name="Safe" parent="." instance=ExtResource("16_g01fq")]
 position = Vector2(-2855, 302)
 scale = Vector2(0.5, 0.5)
 
@@ -539,7 +543,6 @@ script = ExtResource("2_5nsto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 4
-visible = false
 
 [node name="PauseMenu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_gjpho")]
 
@@ -561,7 +564,6 @@ autostart = true
 
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 3
-visible = false
 
 [node name="DialogManager" parent="Player/Camera2D/DialogCanvasLayer" instance=ExtResource("6_y7y61")]
 
