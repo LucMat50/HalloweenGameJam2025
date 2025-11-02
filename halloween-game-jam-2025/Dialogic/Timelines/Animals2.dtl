@@ -1,5 +1,4 @@
 [signal arg="start"]
-[end_timeline]
 join Pig left [animation="Fade In" length="0.3"]
 join Cow right [animation="Fade In" length="0.3"]
 PigAndCow: "Thank you."

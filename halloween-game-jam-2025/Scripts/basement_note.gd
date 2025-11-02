@@ -6,7 +6,8 @@ var player_in_range = false
 signal basementNote
 
 func _ready() -> void:
-	$Sprite2D.hide()
+	pass
+	#$Sprite2D.hide()
 	
 func _on_body_entered(body):
 	if body.is_in_group("player"):
