@@ -13,7 +13,8 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print("Able to Interact")
 		player_in_range = true
-		$Label.show()
+		if player_has_saw:
+			$Label.show()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):

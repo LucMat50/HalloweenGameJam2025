@@ -25,11 +25,12 @@ shape = SubResource("CircleShape2D_vtypo")
 polygon = PackedVector2Array(-19, 39, -12, 30, -7, 19, -7, 1, -7, -13, 9, -8, 16, -14, 4, -29, 17, -51, 18, -67, -11, -61, -22, -44, -24, 56, -20, 56)
 
 [node name="Label" type="Label" parent="."]
-offset_left = -52.0
-offset_top = -90.0
-offset_right = 56.0
-offset_bottom = -63.0
+offset_left = -26.0
+offset_top = -79.0
+offset_right = 82.0
+offset_bottom = -52.0
 theme_override_fonts/font = ExtResource("3_q06vk")
+theme_override_font_sizes/font_size = 9
 text = "Press [E] to interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

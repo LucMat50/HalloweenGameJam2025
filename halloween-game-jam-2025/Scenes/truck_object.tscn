@@ -43,9 +43,10 @@ position = Vector2(-83, -5)
 shape = SubResource("CircleShape2D_3ll04")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -148.0
-offset_top = -87.0
-offset_right = 3.0
-offset_bottom = -64.0
+offset_left = -133.0
+offset_top = -71.0
+offset_right = 18.0
+offset_bottom = -48.0
 theme_override_fonts/font = ExtResource("5_puyk0")
+theme_override_font_sizes/font_size = 10
 text = "Press [E] to interact"

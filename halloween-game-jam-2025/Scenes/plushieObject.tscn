@@ -33,9 +33,10 @@ texture = ExtResource("2_tbk2l")
 shape = SubResource("CircleShape2D_fsygs")
 
 [node name="Label" type="Label" parent="."]
-offset_left = -53.0
-offset_top = -51.0
-offset_right = 55.0
-offset_bottom = -24.0
+offset_left = -31.0
+offset_top = -35.0
+offset_right = 77.0
+offset_bottom = -8.0
 theme_override_fonts/font = ExtResource("5_1qiai")
+theme_override_font_sizes/font_size = 10
 text = "Press [E] to interact"
