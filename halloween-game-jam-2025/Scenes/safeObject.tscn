@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://ba2suifail81f"]
+
+[ext_resource type="Script" uid="uid://c7huv2qfa7rei" path="res://Scripts/closet_safe_object.gd" id="1_o76me"]
+[ext_resource type="Texture2D" uid="uid://eu7is0s01hy" path="res://Assets/Sprites/Closet.png" id="1_slfc8"]
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_ijly5"]
+[ext_resource type="Texture2D" uid="uid://b7lf3sc2s15nl" path="res://Assets/Sprites/Open_closet_.png" id="2_o76me"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="3_4i3k7"]
+
+[sub_resource type="Resource" id="Resource_srvrk"]
+script = ExtResource("2_ijly5")
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[sub_resource type="Resource" id="Resource_jh3a1"]
+script = ExtResource("3_4i3k7")
+name = " Safe"
+texture = ExtResource("2_o76me")
+puzzle = SubResource("Resource_srvrk")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mmtcc"]
+radius = 120.26637
+
+[node name="Safe" type="Area2D"]
+script = ExtResource("1_o76me")
+item = SubResource("Resource_jh3a1")
+
+[node name="Close" type="Sprite2D" parent="."]
+texture = ExtResource("1_slfc8")
+
+[node name="Open" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_o76me")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mmtcc")
