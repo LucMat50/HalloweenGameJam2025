@@ -1,13 +1,32 @@
-[gd_scene load_steps=3 format=3 uid="uid://cu15q0k8r3jwj"]
+[gd_scene load_steps=8 format=3 uid="uid://cu15q0k8r3jwj"]
 
+[ext_resource type="Script" uid="uid://r40meq5lakgk" path="res://Scripts/engine_interactable.gd" id="1_85tus"]
 [ext_resource type="Texture2D" uid="uid://4c1b7h0wbc5" path="res://Assets/Sprites/Engine.png" id="1_866o7"]
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_fvj13"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="3_sektr"]
+
+[sub_resource type="Resource" id="Resource_dg7m8"]
+script = ExtResource("2_fvj13")
+active = true
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[sub_resource type="Resource" id="Resource_i8tjf"]
+script = ExtResource("3_sektr")
+name = "Engine"
+texture = ExtResource("1_866o7")
+description_timeline = "Engine"
+puzzle = SubResource("Resource_dg7m8")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ifnxs"]
-radius = 51.009804
+radius = 36.05551
 
 [node name="Engine" type="Area2D"]
+script = ExtResource("1_85tus")
+item = SubResource("Resource_i8tjf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_866o7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

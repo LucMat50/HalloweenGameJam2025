@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2n15mpsvwtp6"]
+
+[ext_resource type="Script" uid="uid://bbpt2jevwija2" path="res://Scripts/truck_interactable.gd" id="1_3ll04"]
+[ext_resource type="Texture2D" uid="uid://b4hbmuvw1khp5" path="res://Assets/Sprites/Truck.png" id="1_cfq3q"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_0t5bx"]
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_pmib8"]
+
+[sub_resource type="Resource" id="Resource_eqiks"]
+script = ExtResource("2_pmib8")
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[sub_resource type="Resource" id="Resource_pmib8"]
+script = ExtResource("2_0t5bx")
+name = "Truck"
+description_timeline = "Truck"
+puzzle = SubResource("Resource_eqiks")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0t5bx"]
+size = Vector2(212, 134)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ll04"]
+radius = 56.008926
+
+[node name="Truck" type="Area2D"]
+script = ExtResource("1_3ll04")
+item = SubResource("Resource_pmib8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_cfq3q")
+flip_h = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_0t5bx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-83, -5)
+shape = SubResource("CircleShape2D_3ll04")
