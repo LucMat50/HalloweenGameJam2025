@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=57 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://0u41ae355ctf" path="res://Scenes/blueprintsObject.tscn" id="26_w86vl"]
 [ext_resource type="PackedScene" uid="uid://c0e70qhm8821w" path="res://Scenes/plushieObject.tscn" id="27_33kev"]
 [ext_resource type="PackedScene" uid="uid://cu15q0k8r3jwj" path="res://Scenes/engineObject.tscn" id="34_ao4cr"]
+[ext_resource type="PackedScene" uid="uid://d2n15mpsvwtp6" path="res://Scenes/truck_object.tscn" id="35_irg3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q2d71"]
 size = Vector2(906.8224, 10)
@@ -234,6 +235,9 @@ shape = SubResource("RectangleShape2D_b5aes")
 position = Vector2(6.666768, 3.333435)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_r0dna")
+
+[node name="Truck" parent="." instance=ExtResource("35_irg3d")]
+position = Vector2(751, 489)
 
 [node name="Bucket" parent="." instance=ExtResource("24_d3ars")]
 position = Vector2(147, 21)
@@ -531,9 +535,6 @@ position = Vector2(-3146, 563)
 position = Vector2(-2855, 302)
 scale = Vector2(0.5, 0.5)
 
-[node name="Engine" parent="." instance=ExtResource("34_ao4cr")]
-position = Vector2(-1821, 1059)
-
 [node name="HouseBasement" type="Sprite2D" parent="."]
 position = Vector2(-1785, 1170)
 scale = Vector2(0.5, 0.5)
@@ -606,6 +607,9 @@ shape = SubResource("RectangleShape2D_y1bqn")
 [node name="Marker2D" type="Marker2D" parent="HouseBasement/TeleportToF1"]
 position = Vector2(88, 64)
 
+[node name="Engine" parent="." instance=ExtResource("34_ao4cr")]
+position = Vector2(-1821, 1059)
+
 [node name="Player" parent="." instance=ExtResource("2_j0p05")]
 position = Vector2(-3069, -1174)
 
@@ -664,6 +668,7 @@ scale = Vector2(0.5, 0.5)
 [connection signal="body_entered" from="HouseFloor2/TeleportFromF2" to="HouseFloor2/TeleportFromF2" method="_on_body_entered"]
 [connection signal="Blueprint" from="Blueprints" to="HouseFloor1/RugInteractable" method="_on_blueprints_blueprint"]
 [connection signal="body_entered" from="HouseBasement/TeleportToF1" to="HouseBasement/TeleportToF1" method="_on_body_entered"]
+[connection signal="truckEngine" from="Engine" to="Truck" method="_on_engine_truck_engine"]
 [connection signal="timeout" from="Player/Camera2D/CanvasLayer/Timer/WorldTimer" to="." method="_on_world_timer_timeout"]
 [connection signal="dialog_ended" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_exit_dialog"]
 [connection signal="dialog_started" from="Player/Camera2D/DialogCanvasLayer/DialogManager" to="Player" method="player_enter_dialog"]

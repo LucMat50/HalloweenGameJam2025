@@ -1,6 +1,4 @@
 [signal arg="start"]
-[signal arg="activateBucket"]
-[signal arg="end"]
 [end_timeline]
 Oh…What? What happened to them?
 join Pig center [animation="Fade In" length="0.3"]
