@@ -14,6 +14,7 @@ var footstep : AudioStream = preload("res://Assets/Audio/SFX/wood_footstep.wav")
 
 var oink : AudioStream = preload("res://Assets/Audio/SFX/oink.wav")
 var moo : AudioStream = preload("res://Assets/Audio/SFX/moo.wav")
+var meow : AudioStream = preload("res://Assets/Audio/SFX/meow.wav")
 var door_open : AudioStream = preload("res://Assets/Audio/SFX/open_door.wav")
 var hose : AudioStream = preload("res://Assets/Audio/SFX/hose.mp3")
 var car : AudioStream = preload("res://Assets/Audio/SFX/start_car.wav")
@@ -24,6 +25,7 @@ func _ready() -> void:
 	add_child(footstepsPlayer)
 	footstepsPlayer.stream = footstep
 	backgroundMusicPlayer.volume_db = -20.0
+	soundEffectsPlayer.volume_db = -20.0
 	footstepsPlayer.volume_db = 0.0
 	footstepsPlayer.pitch_scale = 2.0
 
@@ -41,6 +43,8 @@ func playSoundEffect(sound_name : String) -> void:
 			soundEffectsPlayer.stream = hose
 		"car":
 			soundEffectsPlayer.stream = car
+		"meow":
+			soundEffectsPlayer.stream = meow
 	
 	soundEffectsPlayer.play()
 		

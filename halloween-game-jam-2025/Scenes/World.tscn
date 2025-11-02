@@ -304,12 +304,6 @@ collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../Map/TeleportToShed")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Shed/TeleportFromShed"]
-self_modulate = Color(1, 0, 1, 1)
-position = Vector2(-0.25637817, 0.2297287)
-scale = Vector2(19.776073, 40.199074)
-mesh = SubResource("BoxMesh_7yo87")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shed/TeleportFromShed"]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_371b6")
@@ -619,6 +613,7 @@ mesh = SubResource("BoxMesh_7yo87")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBasement/TeleportToF1"]
 position = Vector2(3.5, 6)
 shape = SubResource("RectangleShape2D_y1bqn")
+debug_color = Color(0, 0.6, 0.69803923, 0)
 
 [node name="Marker2D" type="Marker2D" parent="HouseBasement/TeleportToF1"]
 position = Vector2(88, 64)
@@ -639,7 +634,6 @@ script = ExtResource("2_5nsto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 4
-visible = false
 
 [node name="PauseMenu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_gjpho")]
 
@@ -661,12 +655,10 @@ autostart = true
 
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 3
-visible = false
 
 [node name="DialogManager" parent="Player/Camera2D/DialogCanvasLayer" instance=ExtResource("6_y7y61")]
 
 [node name="ComboCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
-visible = false
 
 [node name="Control" type="Control" parent="Player/Camera2D/ComboCanvasLayer"]
 layout_mode = 3

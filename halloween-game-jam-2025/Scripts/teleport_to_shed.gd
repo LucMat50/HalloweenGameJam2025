@@ -14,6 +14,7 @@ func _on_body_entered(body: Node2D) -> void:
 			return
 		body.can_tp = false
 		#play fade animation
+		AudioGlobal.playSoundEffect("door_open")
 		$"../../Player/Camera2D/CanvasLayer/fade_transition".show()
 		$"../../FadeTimer".start()
 		$"../../Player/Camera2D/CanvasLayer/fade_transition"/AnimationPlayer.play("fade_in")

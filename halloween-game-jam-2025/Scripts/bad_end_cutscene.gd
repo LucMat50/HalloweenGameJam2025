@@ -46,6 +46,7 @@ func _on_colorRect2_animation_finished(anim_name: StringName) -> void:
 		$Label2.show()
 		$Control/GameOver.show()
 		label2_animation.play("fade_in")
+		AudioGlobal.playSoundEffect("meow")
 
 func _on_label2_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_in":
@@ -53,3 +54,8 @@ func _on_label2_animation_finished(anim_name: StringName) -> void:
 	elif anim_name == "fade_out":
 		$Label2.hide()
 		colorRect2_animation.play("fade_out")	
+
+func _on_game_over_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+			AudioGlobal.pauseMusic()
+			get_tree().change_scene_to_file("res://Scenes/StartMenu.tscn")
