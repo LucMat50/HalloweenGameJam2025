@@ -1,9 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://c840rvx47f5ym"]
+[gd_scene load_steps=8 format=3 uid="uid://dhc2rj8l0be0j"]
+
+[ext_resource type="Script" uid="uid://dr4onlyftc54u" path="res://Scripts/desk_note.gd" id="1_87y2x"]
+[ext_resource type="Texture2D" uid="uid://bpyjymas6u5qr" path="res://Assets/Sprites/Note_on_desk.png" id="2_i8guh"]
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_k8dkr"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="3_iv7gt"]
+
+[sub_resource type="Resource" id="Resource_ty7gu"]
+script = ExtResource("2_k8dkr")
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[sub_resource type="Resource" id="Resource_dwlax"]
+script = ExtResource("3_iv7gt")
+name = " Butchers Notes"
+texture = ExtResource("2_i8guh")
+description_timeline = " Butchers Notes"
+puzzle = SubResource("Resource_ty7gu")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jwffv"]
 radius = 77.00649
 
 [node name="DeskNote" type="Area2D"]
+script = ExtResource("1_87y2x")
+item = SubResource("Resource_dwlax")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i8guh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jwffv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
