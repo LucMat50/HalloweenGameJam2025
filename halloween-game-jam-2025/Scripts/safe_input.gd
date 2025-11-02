@@ -3,9 +3,14 @@ extends LineEdit
 
 var previous_valid_text = ""
 const ALLOWED_CHARACTERS = "0123456789"
+const password = 103187
+
+signal Manual
+signal Wrong
 
 func _ready():
 	self.text_submitted.connect(_on_text_submitted)
+	visible = false
 
 func _on_text_changed(new_text: String):
 	var cursor_pos = self.caret_column
@@ -30,9 +35,19 @@ func _on_text_submitted(submitted_text: String):
 		print("Final valid input (String): ", submitted_text)
 		print("Final valid input (Integer): ", final_number)
 		
-		
 		self.text = ""
 		self.release_focus()
 		
+		if final_number == password:
+			Manual.emit()
+			queue_free()
+		else:
+			Wrong.emit()
+			self.grab_focus()
+		
 	else:
 		print("Error: Input must be exactly 6 digits long.")
+
+func _on_safe_start_combo() -> void:
+	visible = true
+	self.grab_focus()

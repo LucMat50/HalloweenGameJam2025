@@ -6,6 +6,8 @@ var player_in_range = false
 var open = false
 @onready var open_closet = $Open
 
+signal start_combo
+
 func _ready():
 	open_closet.hide()
 	connect("body_entered", Callable(self, "_on_body_entered"))
@@ -26,3 +28,10 @@ func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		open_closet.show()
 		player.dialog_manager.start_dialog(item.description_timeline)
+		start_combo.emit()
+
+func _on_safe_input_manual() -> void:
+	player.dialog_manager.start_dialog("Manual")
+	
+func _on_safe_input_wrong() -> void:
+	player.dialog_manager.start_dialog("Wrong")

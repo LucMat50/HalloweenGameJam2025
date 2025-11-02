@@ -20,6 +20,7 @@ var current_state = State.IDLE
 var input : Vector2
 var speed = walk_speed
 var playback : AnimationNodeStateMachinePlayback
+var entering_combo : bool = false
 
 func _ready() -> void:
 	PuzzleManager.inv = inv
@@ -69,7 +70,8 @@ func player_enter_dialog() -> void:
 	current_state = State.DIALOG
  
 func player_exit_dialog() -> void:
-	current_state = State.IDLE
+	if !entering_combo:
+		current_state = State.IDLE
 
 #item interaction
 func tryCollect(item):
@@ -77,3 +79,11 @@ func tryCollect(item):
 	playback.travel("Idle")
 	print("Collect: ", item.name)
 	return PuzzleManager.tryPuzzle(item)
+
+func _on_safe_start_combo() -> void:
+	current_state = State.DIALOG
+	entering_combo = true
+
+func _on_safe_input_manual() -> void:
+	current_state = State.IDLE
+	entering_combo = false

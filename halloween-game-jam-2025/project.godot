@@ -51,6 +51,7 @@ directories/dtl_directory={
 "Shed door": "res://Dialogic/Timelines/Items/Shed door.dtl",
 "Truck": "res://Dialogic/Timelines/Items/Truck.dtl",
 "Window": "res://Dialogic/Timelines/Items/Window.dtl",
+"Wrong": "res://Dialogic/Timelines/Items/Wrong.dtl",
 "key": "res://Dialogic/Timelines/Items/key.dtl",
 "test_timeline_1": "res://Dialogic/Timelines/test_timeline_1.dtl"
 }
