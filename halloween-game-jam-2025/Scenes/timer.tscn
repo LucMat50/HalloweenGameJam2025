@@ -1,31 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dt372jq7vuaic"]
+[gd_scene load_steps=4 format=3 uid="uid://dt372jq7vuaic"]
 
 [ext_resource type="Texture2D" uid="uid://e2cmfqnqhvoo" path="res://Assets/UI/timer.png" id="1_pvhx5"]
 [ext_resource type="Script" uid="uid://dbkl8koq4xndj" path="res://Scripts/timer.gd" id="1_ycw00"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="3_4hjkw"]
 
 [node name="Timer" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchor_right = 0.23600002
+anchor_bottom = 0.165
+offset_right = -271.872
+offset_bottom = -106.920006
 size_flags_horizontal = 0
 script = ExtResource("1_ycw00")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(157, 57)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_pvhx5")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 148.0
-offset_top = 48.0
-offset_right = 268.0
-offset_bottom = 113.0
-theme_override_font_sizes/font_size = 30
+offset_left = 146.0
+offset_top = 38.0
+offset_right = 266.0
+offset_bottom = 103.0
+theme_override_fonts/font = ExtResource("3_4hjkw")
+theme_override_font_sizes/font_size = 35
 text = "00:00"
 
 [node name="Timer" type="Timer" parent="."]

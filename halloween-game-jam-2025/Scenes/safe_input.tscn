@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvyb38gc7errg"]
+[gd_scene load_steps=3 format=3 uid="uid://dvyb38gc7errg"]
 
 [ext_resource type="Script" uid="uid://b37uctqnnyplg" path="res://Scripts/safe_input.gd" id="1_hnuxq"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="1_rywc3"]
 
 [node name="SafeInput" type="LineEdit"]
+theme_override_fonts/font = ExtResource("1_rywc3")
+theme_override_font_sizes/font_size = 30
 max_length = 6
 script = ExtResource("1_hnuxq")
 

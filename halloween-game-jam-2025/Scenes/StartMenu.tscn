@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://yxmwt4kvkrb3"]
+[gd_scene load_steps=8 format=3 uid="uid://yxmwt4kvkrb3"]
 
 [ext_resource type="Script" uid="uid://bk0lk4donktyw" path="res://Scripts/start_menu.gd" id="1_dl0pg"]
 [ext_resource type="Texture2D" uid="uid://be3dl7c103w28" path="res://Assets/StartPauseMenu/TitleMenuBackground.webp" id="2_ujd4t"]
 [ext_resource type="Texture2D" uid="uid://y53pvqrtwhn1" path="res://Assets/StartPauseMenu/Board1.webp" id="2_xtte2"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="4_dibtv"]
 [ext_resource type="Texture2D" uid="uid://k6blld1g74mh" path="res://Assets/StartPauseMenu/Board2.webp" id="4_ujd4t"]
 [ext_resource type="Texture2D" uid="uid://q5e1df8pr7qm" path="res://Assets/StartPauseMenu/Board3.webp" id="5_ql1sk"]
 [ext_resource type="PackedScene" uid="uid://b4we08t7qajtk" path="res://Scenes/fade_transition.tscn" id="6_ql1sk"]
@@ -63,6 +64,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dibtv")
 theme_override_font_sizes/font_size = 48
 text = "Play"
 
@@ -86,6 +88,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dibtv")
 theme_override_font_sizes/font_size = 48
 text = "Options"
 
@@ -109,6 +112,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_dibtv")
 theme_override_font_sizes/font_size = 48
 text = "Quit"
 
