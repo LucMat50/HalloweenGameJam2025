@@ -21,6 +21,7 @@ var input : Vector2
 var speed = walk_speed
 var playback : AnimationNodeStateMachinePlayback
 var entering_combo : bool = false
+var is_walking : bool = false
 
 func _ready() -> void:
 	PuzzleManager.inv = inv
@@ -57,8 +58,13 @@ func select_animation() -> void:
 	if velocity == Vector2.ZERO:
 		change_state(State.IDLE)
 		playback.travel("Idle")
+		is_walking = false
+		AudioGlobal.stopFootstep()
 	else:
 		playback.travel("Walk")
+		if !is_walking:
+			AudioGlobal.playFootstep()
+			is_walking = true
 
 func update_animation_parameters() -> void:
 	if input == Vector2.ZERO:
@@ -85,5 +91,9 @@ func _on_safe_start_combo() -> void:
 	entering_combo = true
 
 func _on_safe_input_manual() -> void:
+	current_state = State.IDLE
+	entering_combo = false
+
+func _on_safe_input_wrong() -> void:
 	current_state = State.IDLE
 	entering_combo = false

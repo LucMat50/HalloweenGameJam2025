@@ -43,7 +43,7 @@ func _on_text_submitted(submitted_text: String):
 			queue_free()
 		else:
 			Wrong.emit()
-			self.grab_focus()
+			visible = false
 		
 	else:
 		print("Error: Input must be exactly 6 digits long.")

@@ -3,6 +3,9 @@ extends Node2D
 
 var button_type = null
 
+func _ready() -> void:
+	AudioGlobal.changeMusic("background")
+
 func _on_play_pressed() -> void:
 	button_type = "start"
 	$fade_transition.show()

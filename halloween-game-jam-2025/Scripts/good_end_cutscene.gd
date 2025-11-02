@@ -3,6 +3,7 @@ extends Control
 
 func _ready() -> void:
 	AudioGlobal.changeMusic("horror_ambience")
+	AudioGlobal.playSoundEffect("car")
 	$Butcher.visible = false
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	
