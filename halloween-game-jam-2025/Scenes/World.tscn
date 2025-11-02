@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
-[ext_resource type="Texture2D" uid="uid://dipq7bknrig2n" path="res://Assets/Map/MapSkele.webp" id="1_y7y61"]
 [ext_resource type="Script" uid="uid://d3rhbrrxviip" path="res://Scripts/Camera.gd" id="2_5nsto"]
 [ext_resource type="PackedScene" uid="uid://ps23jjiig7bw" path="res://Scenes/keyObject.tscn" id="2_45d1s"]
 [ext_resource type="PackedScene" uid="uid://bgw37s0ts834g" path="res://Scenes/Player.tscn" id="2_j0p05"]
+[ext_resource type="Texture2D" uid="uid://c6foxurgcilfg" path="res://Assets/Map/MainMap.webp" id="3_d2jk0"]
 [ext_resource type="Script" uid="uid://bl51200k3m1j1" path="res://Scripts/teleport_to_shed.gd" id="3_kn06e"]
 [ext_resource type="PackedScene" uid="uid://wt0o3w0j2bre" path="res://Scenes/pause_menu.tscn" id="4_gjpho"]
 [ext_resource type="PackedScene" uid="uid://c51ng030ic7hg" path="res://Scenes/sawObject.tscn" id="5_8l3nt"]
@@ -52,14 +52,14 @@ size = Vector2(245.78842, 183.76712)
 size = Vector2(301.3498, 271.05652)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ti1bm"]
-size = Vector2(424.71487, 395.09937)
+size = Vector2(379.35742, 409.54956)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q2d71"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_7yo87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwt1y"]
-size = Vector2(20, 40)
+size = Vector2(22, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5aes"]
 size = Vector2(506.6667, 139.99992)
@@ -111,9 +111,14 @@ scale = Vector2(5, 5)
 texture = ExtResource("1_5cjrv")
 
 [node name="Map" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(575.58, 327.5)
-scale = Vector2(1.0618888, 0.8706667)
-texture = ExtResource("1_y7y61")
+texture = ExtResource("3_d2jk0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Map"]
+position = Vector2(-0.57995605, 1)
+scale = Vector2(0.87790704, 0.8697972)
+texture = ExtResource("3_d2jk0")
 
 [node name="NorthBorder" type="StaticBody2D" parent="Map"]
 position = Vector2(0, -412)
@@ -149,7 +154,7 @@ shape = SubResource("RectangleShape2D_uo7di")
 position = Vector2(-241.62607, -308.38437)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/ShedBorder"]
-position = Vector2(-0.4708557, 5.7427216)
+position = Vector2(9.046051, 17.884369)
 scale = Vector2(1, 1.0000007)
 shape = SubResource("RectangleShape2D_7yo87")
 
@@ -157,7 +162,7 @@ shape = SubResource("RectangleShape2D_7yo87")
 position = Vector2(-274.5862, 222.24356)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/BarnBorder"]
-position = Vector2(1.8834839, 5.742676)
+position = Vector2(18.006195, -10.74353)
 scale = Vector2(1, 1.0000006)
 shape = SubResource("RectangleShape2D_kn06e")
 
@@ -165,7 +170,7 @@ shape = SubResource("RectangleShape2D_kn06e")
 position = Vector2(183.08884, -203.86676)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/HouseBorder"]
-position = Vector2(-1.4125977, 8.039856)
+position = Vector2(3.6524658, 1.141655)
 scale = Vector2(1, 1.0000006)
 shape = SubResource("RectangleShape2D_ti1bm")
 
@@ -174,7 +179,7 @@ position = Vector2(373.31592, 137.25116)
 physics_material_override = SubResource("PhysicsMaterial_q2d71")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Map/WindmillBorder"]
-polygon = PackedVector2Array(-102.64728, -44.793243, -100.763855, 196.40125, -64.978516, 196.40125, 10.358887, 74.65546, 80.98779, 73.5069, 80.98779, -105.66614, -16.009216, -105.66614, -16.009216, -75.803986, -42.37732, -76.952515, -40.493896, -44.793243, -102.64728, -45.941803)
+polygon = PackedVector2Array(-102.64728, -44.793243, -112.895935, 116.24884, -42.895935, 118.24884, 29.104065, 116.24884, 36.104065, 79.24884, 37.104065, -103.75116, -16.009216, -105.66614, -51.895935, -103.75116, -116.895935, -102.75116, -102.64728, -45.941803)
 
 [node name="TruckBorder" type="StaticBody2D" parent="Map"]
 position = Vector2(188.73915, 178.59879)
@@ -183,7 +188,8 @@ position = Vector2(188.73915, 178.59879)
 polygon = PackedVector2Array(-11.300598, -44.793274, 36.72705, -25.268005, 11.300659, 44.793274, -37.6687, 26.416504)
 
 [node name="TeleportToShed" type="Area2D" parent="Map" node_paths=PackedStringArray("landing_zone")]
-position = Vector2(-108, -300)
+visible = false
+position = Vector2(-119.58002, -222.5)
 collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../Shed/TeleportFromShed")
@@ -195,13 +201,15 @@ scale = Vector2(19.776073, 40.199074)
 mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/TeleportToShed"]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_rwt1y")
 
 [node name="Marker2D" type="Marker2D" parent="Map/TeleportToShed"]
-position = Vector2(20, 0)
+position = Vector2(27.419983, 0.5)
 
 [node name="TeleportToF1" type="Area2D" parent="Map" node_paths=PackedStringArray("landing_zone")]
-position = Vector2(-42, -60)
+visible = false
+position = Vector2(-5.580017, -46.5)
 collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseFloor1/TeleportFromF1")
@@ -218,7 +226,7 @@ mesh = SubResource("BoxMesh_7yo87")
 shape = SubResource("RectangleShape2D_rwt1y")
 
 [node name="Marker2D" type="Marker2D" parent="Map/TeleportToF1"]
-position = Vector2(20, 0)
+position = Vector2(-36, -1)
 
 [node name="Animals" type="Sprite2D" parent="."]
 position = Vector2(283.99997, 269.99997)
@@ -247,7 +255,7 @@ position = Vector2(751, 489)
 position = Vector2(147, 21)
 
 [node name="hoseObject" parent="." instance=ExtResource("8_l11rc")]
-position = Vector2(418, 618)
+position = Vector2(436, 643)
 
 [node name="Shed" type="Sprite2D" parent="."]
 position = Vector2(-3008, -1192)
@@ -291,6 +299,7 @@ position = Vector2(-7, -171)
 polygon = PackedVector2Array(311, 62, 131, 64, -171, 64, -220, 64, -203, 80, -199, 89, -205, 91, -210, 99, -216, 101, -235, 94, -253, 93, -259, 119, -259, 163, -262, 180, -270, 191, -287, 214, -289, -54, 308, -55)
 
 [node name="TeleportFromShed" type="Area2D" parent="Shed" node_paths=PackedStringArray("landing_zone")]
+visible = false
 position = Vector2(280, 60)
 collision_layer = 2
 script = ExtResource("3_kn06e")
@@ -396,6 +405,7 @@ position = Vector2(20, 0)
 texture = ExtResource("14_7dsfl")
 
 [node name="TeleportToF2" type="Area2D" parent="HouseFloor1" node_paths=PackedStringArray("landing_zone")]
+visible = false
 position = Vector2(242, -324)
 collision_layer = 2
 script = ExtResource("3_kn06e")
@@ -507,6 +517,7 @@ texture = ExtResource("10_rwt1y")
 polygon = PackedVector2Array(65.03955, 72, 65.03955, 92, 51.811035, 92, 51.811035, 110, -128.97607, 110, -126.771484, 92, -137.79492, 92, -137.79492, -118, 146.61426, -118, 146.61426, -82, 69.44873, -82, -111.33838, -14, -115.74805, 72)
 
 [node name="TeleportFromF2" type="Area2D" parent="HouseFloor2" node_paths=PackedStringArray("landing_zone")]
+visible = false
 position = Vector2(248, -224)
 collision_layer = 2
 script = ExtResource("3_kn06e")
@@ -594,6 +605,7 @@ polygon = PackedVector2Array(-82, -24, -86, 184, -482, 190, -476, -26)
 polygon = PackedVector2Array(-514, 192, -486, 252, -432, 296, -350, 314, -246, 304, -250, 272, -226, 268, -224, 310, -140, 378, -140, 356, -124, 358, -124, 388, -66, 410, -10, 414, 38, 412, 92, 384, 84, 338, 112, 340, 108, 380, 158, 440, 212, 464, 318, 456, 324, 388, 344, 392, 346, 392, 352, 454, 372, 472, 436, 476, 442, 412, 462, 416, 458, 474, 462, 484, -524, 478)
 
 [node name="TeleportToF1" type="Area2D" parent="HouseBasement" node_paths=PackedStringArray("landing_zone")]
+visible = false
 position = Vector2(242, -324)
 collision_layer = 2
 script = ExtResource("3_kn06e")
@@ -628,6 +640,7 @@ script = ExtResource("2_5nsto")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 4
+visible = false
 
 [node name="PauseMenu" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_gjpho")]
 
@@ -649,10 +662,12 @@ autostart = true
 
 [node name="DialogCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 layer = 3
+visible = false
 
 [node name="DialogManager" parent="Player/Camera2D/DialogCanvasLayer" instance=ExtResource("6_y7y61")]
 
 [node name="ComboCanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+visible = false
 
 [node name="Control" type="Control" parent="Player/Camera2D/ComboCanvasLayer"]
 layout_mode = 3
