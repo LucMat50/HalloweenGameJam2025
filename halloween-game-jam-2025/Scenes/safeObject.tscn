@@ -14,6 +14,7 @@ metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
 script = ExtResource("3_4i3k7")
 name = " Safe"
 texture = ExtResource("2_o76me")
+description_timeline = "Safe"
 puzzle = SubResource("Resource_srvrk")
 metadata/_custom_type_script = "uid://cpocwgcs2t07p"
 

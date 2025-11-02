@@ -25,3 +25,4 @@ func _on_body_exited(body):
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		open_closet.show()
+		player.dialog_manager.start_dialog(item.description_timeline)
