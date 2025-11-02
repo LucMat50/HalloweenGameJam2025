@@ -1,4 +1,7 @@
 [signal arg="start"]
+[signal arg="activateBucket"]
+[signal arg="end"]
+[end_timeline]
 Oh…What? What happened to them?
 join Pig center [animation="Fade In" length="0.3"]
 Pig: "Hey, be careful. I don’t know how long until Daron comes back."
