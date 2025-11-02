@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2n15mpsvwtp6"]
+[gd_scene load_steps=10 format=3 uid="uid://mej3x56lpkc4"]
 
-[ext_resource type="Script" uid="uid://bbpt2jevwija2" path="res://Scripts/truck_interactable.gd" id="1_3ll04"]
+[ext_resource type="Script" path="res://Scripts/truck_interactable.gd" id="1_3ll04"]
 [ext_resource type="Texture2D" uid="uid://b4hbmuvw1khp5" path="res://Assets/Sprites/Truck.png" id="1_cfq3q"]
 [ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_0t5bx"]
 [ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_pmib8"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="5_puyk0"]
 
 [sub_resource type="Resource" id="Resource_eqiks"]
 script = ExtResource("2_pmib8")
@@ -40,3 +41,11 @@ shape = SubResource("RectangleShape2D_0t5bx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-83, -5)
 shape = SubResource("CircleShape2D_3ll04")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -148.0
+offset_top = -87.0
+offset_right = 3.0
+offset_bottom = -64.0
+theme_override_fonts/font = ExtResource("5_puyk0")
+text = "Press [E] to interact"

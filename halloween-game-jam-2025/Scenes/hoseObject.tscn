@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4yjlbw4sv1qc"]
+[gd_scene load_steps=6 format=3 uid="uid://cinhhqj5ebxtd"]
 
 [ext_resource type="Script" uid="uid://dmxaknkr58ayn" path="res://Scripts/hose_interactable.gd" id="1_2ghcp"]
 [ext_resource type="Texture2D" uid="uid://d0ssgiegr4i7s" path="res://Assets/Sprites/Hose.png" id="1_bhxo1"]
 [ext_resource type="Resource" uid="uid://c13u7ix66ca1k" path="res://Inventory/Items/Hose.tres" id="2_3vjp8"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="4_kwg30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2ghcp"]
 radius = 42.0
@@ -17,3 +18,11 @@ texture = ExtResource("1_bhxo1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2ghcp")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -57.0
+offset_top = -59.0
+offset_right = 57.0
+offset_bottom = -32.0
+theme_override_fonts/font = ExtResource("4_kwg30")
+text = "Press [E] to interact"

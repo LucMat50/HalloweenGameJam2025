@@ -6,6 +6,7 @@ var player_in_range = false
 signal Saw
 
 func _ready():
+	$Label.hide()
 	connect("body_entered", Callable(self, "_on_body_entered"))
 	connect("body_exited", Callable(self, "_on_body_exited"))
 
@@ -14,11 +15,13 @@ func _on_body_entered(body):
 		print("Enter")
 		player_in_range = true
 		player = body
+		$Label.show()
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
 		player = null
+		$Label.hide()
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):

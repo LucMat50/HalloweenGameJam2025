@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c51ng030ic7hg"]
+[gd_scene load_steps=6 format=3 uid="uid://c51ng030ic7hg"]
 
 [ext_resource type="Script" uid="uid://b33ykuj7kmh0s" path="res://Scripts/saw_object.gd" id="1_fpa72"]
 [ext_resource type="Texture2D" uid="uid://5a71rqd7657d" path="res://Inventory/Items/Saw.webp" id="1_g6lqu"]
 [ext_resource type="Resource" uid="uid://cdgbhveq88oec" path="res://Inventory/Items/saw.tres" id="2_vmibt"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="4_uvfam"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fpa72"]
 radius = 55.0
@@ -16,5 +17,13 @@ texture = ExtResource("1_g6lqu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fpa72")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -54.0
+offset_top = -52.0
+offset_right = 56.0
+offset_bottom = -25.0
+theme_override_fonts/font = ExtResource("4_uvfam")
+text = "Press [E] to interact"
 
 [connection signal="Saw" from="." to="." method="_on_saw"]

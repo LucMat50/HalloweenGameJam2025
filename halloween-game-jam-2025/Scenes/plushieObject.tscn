@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0e70qhm8821w"]
+[gd_scene load_steps=9 format=3 uid="uid://qmdpf5fjjqbm"]
 
 [ext_resource type="Script" uid="uid://bh8lkv7i1mkgj" path="res://Scripts/blueprints_interactable.gd" id="1_amkjx"]
 [ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_amkjx"]
 [ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_lji7u"]
 [ext_resource type="Texture2D" uid="uid://bar271wo2bcyt" path="res://Assets/Sprites/Cat_plushie.png" id="2_tbk2l"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="5_1qiai"]
 
 [sub_resource type="Resource" id="Resource_1qiai"]
 script = ExtResource("2_lji7u")
@@ -30,3 +31,11 @@ texture = ExtResource("2_tbk2l")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fsygs")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -53.0
+offset_top = -51.0
+offset_right = 55.0
+offset_bottom = -24.0
+theme_override_fonts/font = ExtResource("5_1qiai")
+text = "Press [E] to interact"

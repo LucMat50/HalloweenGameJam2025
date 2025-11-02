@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bgb470um71t6r"]
+[gd_scene load_steps=5 format=3 uid="uid://tux704pt1qcd"]
 
 [ext_resource type="Texture2D" uid="uid://gek1g5kr5e2g" path="res://Assets/Map/Rug.png" id="1_cngco"]
-[ext_resource type="Script" uid="uid://d31ktpyiumyg3" path="res://Scenes/rug_interactable.gd" id="1_k31xl"]
+[ext_resource type="Script" path="res://Scenes/rug_interactable.gd" id="1_k31xl"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="3_cbj7t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k31xl"]
 size = Vector2(262, 318)
@@ -14,6 +15,14 @@ texture = ExtResource("1_cngco")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_k31xl")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -49.0
+offset_top = 69.0
+offset_right = 59.0
+offset_bottom = 96.0
+theme_override_fonts/font = ExtResource("3_cbj7t")
+text = "Press [E] to interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

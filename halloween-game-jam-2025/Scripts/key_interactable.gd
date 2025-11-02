@@ -6,14 +6,21 @@ var player_in_range:bool = false
 var player_has_key:bool = false
 
 #FUNCTIONS
+
+func _ready():
+	$Label.hide()
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print("Able to Interact")
 		player_in_range = true
+		if player_has_key:
+			$Label.show()
 
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
+		$Label.hide()
 
 func _on_key_key_1() -> void:
 	player_has_key = true

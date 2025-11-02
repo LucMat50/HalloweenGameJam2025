@@ -7,14 +7,19 @@ var puzzle2_done : bool = false
 
 signal animals_done
 
+func _ready():
+	$Label.hide()
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print("Able to Interact")
 		player_in_range = true
+		$Label.show()
 
 func _body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
+		$Label.hide()
 
 func _process(_delta: float):
 	if player_in_range and Input.is_action_just_pressed("interact") and !puzzle2_done:

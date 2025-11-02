@@ -6,19 +6,20 @@ var player_in_range = false
 signal basementNote
 
 func _ready() -> void:
-	pass
-	#$Sprite2D.hide()
+	$Label.hide()
 	
 func _on_body_entered(body):
 	if body.is_in_group("player"):
 		print("Enter")
 		player_in_range = true
 		player = body
+		$Label.show()
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
 		player_in_range = false
 		player = null
+		$Label.hide()
 
 func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):

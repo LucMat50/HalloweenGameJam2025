@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ypru5q0186v8"]
+[gd_scene load_steps=5 format=3 uid="uid://ypru5q0186v8"]
 
 [ext_resource type="Script" uid="uid://ux0bqys5iww0" path="res://Scripts/key_interactable.gd" id="1_t501h"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="2_mt0bp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_t501h"]
 radius = 51.24451
@@ -19,6 +20,14 @@ shape = SubResource("CircleShape2D_t501h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_sw6ka")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -100.0
+offset_right = 53.0
+offset_bottom = -73.0
+theme_override_fonts/font = ExtResource("2_mt0bp")
+text = "Press [E] to unlock"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
