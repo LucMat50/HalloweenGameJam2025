@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://bh83f6jfwyj62"]
+
+[ext_resource type="Texture2D" uid="uid://c1s2v6s7a7cwr" path="res://Assets/Sprites/Note_basement.png" id="1_yivb3"]
+[ext_resource type="Script" uid="uid://8i1fet00gors" path="res://Scripts/basement_note.gd" id="1_ysgkh"]
+[ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_lwrww"]
+[ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_sft0k"]
+[ext_resource type="Texture2D" uid="uid://c5hxe3baib8uc" path="res://Assets/Sprites/Note_in_basement.png" id="3_lwrww"]
+
+[sub_resource type="Resource" id="Resource_0mvvp"]
+script = ExtResource("2_lwrww")
+metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
+
+[sub_resource type="Resource" id="Resource_vpmv0"]
+script = ExtResource("2_sft0k")
+name = " Butchers Notes"
+texture = ExtResource("3_lwrww")
+description_timeline = " Butchers Notes"
+puzzle = SubResource("Resource_0mvvp")
+metadata/_custom_type_script = "uid://cpocwgcs2t07p"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysgkh"]
+radius = 58.21512
+
+[node name="basement_note" type="Area2D"]
+script = ExtResource("1_ysgkh")
+item = SubResource("Resource_vpmv0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_yivb3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ysgkh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

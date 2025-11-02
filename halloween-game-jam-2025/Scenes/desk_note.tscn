@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhc2rj8l0be0j"]
+[gd_scene load_steps=9 format=3 uid="uid://dhc2rj8l0be0j"]
 
 [ext_resource type="Script" uid="uid://dr4onlyftc54u" path="res://Scripts/desk_note.gd" id="1_87y2x"]
-[ext_resource type="Texture2D" uid="uid://bpyjymas6u5qr" path="res://Assets/Sprites/Note_on_desk.png" id="2_i8guh"]
+[ext_resource type="Texture2D" uid="uid://drg3m3psg1nbh" path="res://Assets/Sprites/Paper_on_desk.png" id="2_i8guh"]
 [ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_k8dkr"]
 [ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="3_iv7gt"]
+[ext_resource type="Texture2D" uid="uid://bpyjymas6u5qr" path="res://Assets/Sprites/Note_on_desk.png" id="5_iv7gt"]
 
 [sub_resource type="Resource" id="Resource_ty7gu"]
 script = ExtResource("2_k8dkr")
@@ -25,7 +26,7 @@ script = ExtResource("1_87y2x")
 item = SubResource("Resource_dwlax")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_i8guh")
+texture = ExtResource("5_iv7gt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jwffv")
