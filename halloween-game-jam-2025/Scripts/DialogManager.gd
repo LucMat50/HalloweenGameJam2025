@@ -14,8 +14,13 @@ func _ready() -> void:
 	
 func start_dialog(timeline : String):
 	visible = true
+	$MarginContainer.visible = true
 	Dialogic.start(timeline)
 	dialog_started.emit()
+	
+func hide_textboxes():
+	$MarginContainer.visible = false
+	print("hide")
 	
 func show_image(image : CompressedTexture2D, scale_down : bool = false):
 	if image:

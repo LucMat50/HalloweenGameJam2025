@@ -23,6 +23,6 @@ func _process(_delta):
 	if player_in_range and Input.is_action_just_pressed("interact"):
 		if player:
 			deskNote.emit()
-			var success = player.tryCollect(item)  # give item to player
-			if success:
-				queue_free()
+			player.dialog_manager.start_dialog(item.description_timeline)
+			player.dialog_manager.show_image(item.texture)
+			player.dialog_manager.hide_textboxes()
