@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="HalloweenGameJam2025"
+config/name="CATTLED"
 run/main_scene="uid://yxmwt4kvkrb3"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b4hbmuvw1khp5"
 
 [autoload]
 
