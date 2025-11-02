@@ -33,6 +33,8 @@ func _on_label_animation_finished(anim_name: StringName) -> void:
 func _on_colorRect_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "fade_out":
 		hand_animation.play("Grab")
+	elif anim_name == "fade_in":
+		label_animation.play("fade_in")
 
 func _on_hand_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Grab":
