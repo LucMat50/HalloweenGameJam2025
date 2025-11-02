@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://bu2t4ml2sle7f"]
+[gd_scene load_steps=59 format=3 uid="uid://bu2t4ml2sle7f"]
 
 [ext_resource type="Texture2D" uid="uid://d0jijxh2bv35b" path="res://Assets/Map/placeholder_bg.JPG" id="1_5cjrv"]
 [ext_resource type="Script" uid="uid://b2hct3g25q61k" path="res://Scripts/world.gd" id="1_mvfa8"]
@@ -55,8 +55,6 @@ size = Vector2(301.3498, 271.05652)
 size = Vector2(379.35742, 409.54956)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_q2d71"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_7yo87"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwt1y"]
 size = Vector2(22, 40)
@@ -194,12 +192,6 @@ collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../Shed/TeleportFromShed")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/TeleportToShed"]
-self_modulate = Color(1, 0, 1, 1)
-position = Vector2(-0.25637817, 0.2297287)
-scale = Vector2(19.776073, 40.199074)
-mesh = SubResource("BoxMesh_7yo87")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/TeleportToShed"]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_rwt1y")
@@ -214,12 +206,6 @@ collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseFloor1/TeleportFromF1")
 is_window = true
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Map/TeleportToF1"]
-self_modulate = Color(0, 0.65882355, 1, 1)
-position = Vector2(-0.25637817, 0.2297287)
-scale = Vector2(19.776073, 40.199074)
-mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Map/TeleportToF1"]
 shape = SubResource("RectangleShape2D_rwt1y")
@@ -381,12 +367,6 @@ collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../Map/TeleportToF1")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="HouseFloor1/TeleportFromF1"]
-self_modulate = Color(0, 0.65882355, 1, 1)
-position = Vector2(-0.25637817, 7.5000057)
-scale = Vector2(19.776073, 161.00002)
-mesh = SubResource("BoxMesh_7yo87")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor1/TeleportFromF1"]
 position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_ao4cr")
@@ -403,12 +383,6 @@ position = Vector2(242, -324)
 collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseFloor2/TeleportFromF2")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="HouseFloor1/TeleportToF2"]
-self_modulate = Color(0, 0.76862746, 0, 1)
-position = Vector2(-0.25637817, 7.5000057)
-scale = Vector2(19.776073, 161.00002)
-mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor1/TeleportToF2"]
 position = Vector2(7, 8)
@@ -429,12 +403,6 @@ position = Vector2(-2310, -130)
 collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseBasement/TeleportToF1")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="HouseFloor1/TeleportToBasement"]
-self_modulate = Color(0.6706589, 0, 0.18593359, 1)
-position = Vector2(-1.0000458, 7.5000057)
-scale = Vector2(165.99973, 161.00002)
-mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor1/TeleportToBasement"]
 position = Vector2(0, 7)
@@ -515,12 +483,6 @@ position = Vector2(248, -224)
 collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseFloor1/TeleportToF2")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="HouseFloor2/TeleportFromF2"]
-self_modulate = Color(0, 0.76862746, 0, 1)
-position = Vector2(53.99997, 28.000002)
-scale = Vector2(19.776073, 55.999992)
-mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseFloor2/TeleportFromF2"]
 position = Vector2(50, 28)
@@ -603,12 +565,6 @@ position = Vector2(242, -324)
 collision_layer = 2
 script = ExtResource("3_kn06e")
 landing_zone = NodePath("../../HouseFloor1/TeleportToBasement")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="HouseBasement/TeleportToF1"]
-self_modulate = Color(0.67058825, 0, 0.18431373, 1)
-position = Vector2(-0.25637817, 7.5000057)
-scale = Vector2(19.776073, 161.00002)
-mesh = SubResource("BoxMesh_7yo87")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HouseBasement/TeleportToF1"]
 position = Vector2(3.5, 6)

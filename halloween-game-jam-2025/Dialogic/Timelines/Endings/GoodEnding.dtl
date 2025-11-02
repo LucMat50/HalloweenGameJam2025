@@ -1,8 +1,8 @@
-You were able to escape by using the truck and reported the incident to the police.
-The police went to check out the farm, but they claimed it was a normal farm by the time they got there.
-There was a regular farmer and regular farm animals.
-Due to a lack of evidence, they dropped the accusations against the Butcher, and the police questioned your sanity.
+[color=white]You were able to escape by using the truck and reported the incident to the police.[/color]
+[color=white]The police went to check out the farm, but they claimed it was a normal farm by the time they got there.[/color]
+[color=white]There was a regular farmer and regular farm animals.[/color]
+[color=white]Due to a lack of evidence, they dropped the accusations against the Butcher, and the police questioned your sanity.[/color]
 [signal arg="butcher"]
-Butcher will not forget what you did.
+[color=white]Butcher will not forget what you did.[/color]
 [signal arg="end"]
 [end_timeline]

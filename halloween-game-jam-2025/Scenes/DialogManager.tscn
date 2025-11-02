@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpoereb5qqcrc"]
+[gd_scene load_steps=5 format=3 uid="uid://dpoereb5qqcrc"]
 
 [ext_resource type="Script" uid="uid://c6qijmvmu3g3m" path="res://Scripts/DialogManager.gd" id="1_ep2gf"]
-[ext_resource type="Texture2D" uid="uid://iht1cpj5jhs5" path="res://Assets/Sprites/Bucket_.png" id="2_0dutt"]
 [ext_resource type="Texture2D" uid="uid://b35mrim6u7xi8" path="res://Assets/UI/dialogbox_nochar.png" id="2_ofj6k"]
 [ext_resource type="Texture2D" uid="uid://mvlk7uxvkdap" path="res://Assets/UI/dialogbox.png" id="3_hqwho"]
 [ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="5_m7oyg"]
@@ -31,7 +30,6 @@ theme_override_constants/margin_bottom = 50
 
 [node name="ItemImage" type="TextureRect" parent="MarginContainer2"]
 layout_mode = 2
-texture = ExtResource("2_0dutt")
 expand_mode = 2
 stretch_mode = 3
 
@@ -73,7 +71,7 @@ offset_bottom = 2.8639908
 rotation = -0.23561946
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("5_m7oyg")
-theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/normal_font_size = 25
 fit_content = true
 horizontal_alignment = 1
 vertical_alignment = 1

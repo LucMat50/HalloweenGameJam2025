@@ -73,6 +73,8 @@ func update_animation_parameters() -> void:
 	animation_tree["parameters/Walk/blend_position"] = input
 	
 func player_enter_dialog() -> void:
+	AudioGlobal.stopFootstep()
+	playback.travel("Idle")
 	current_state = State.DIALOG
  
 func player_exit_dialog() -> void:
