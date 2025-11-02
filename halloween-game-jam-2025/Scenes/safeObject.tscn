@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ba2suifail81f"]
+[gd_scene load_steps=9 format=3 uid="uid://c3pogyovllddc"]
 
-[ext_resource type="Script" uid="uid://c7huv2qfa7rei" path="res://Scripts/closet_safe_object.gd" id="1_o76me"]
+[ext_resource type="Script" path="res://Scripts/closet_safe_object.gd" id="1_o76me"]
 [ext_resource type="Texture2D" uid="uid://eu7is0s01hy" path="res://Assets/Sprites/Closet.png" id="1_slfc8"]
 [ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_ijly5"]
 [ext_resource type="Texture2D" uid="uid://b7lf3sc2s15nl" path="res://Assets/Sprites/Open_closet_.png" id="2_o76me"]
