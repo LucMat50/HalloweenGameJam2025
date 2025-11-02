@@ -23,7 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://dwfresoh1v2rr" path="res://Assets/Map/HouseLivingRoom.webp" id="12_33kev"]
 [ext_resource type="Texture2D" uid="uid://cm625r8j8u3ij" path="res://Assets/Map/Floor1Window.webp" id="14_7dsfl"]
 [ext_resource type="Texture2D" uid="uid://cwt23w7mxoxjg" path="res://Assets/Map/HouseFloor2.png" id="14_33kev"]
-[ext_resource type="PackedScene" path="res://Scenes/rug_interactable.tscn" id="14_g01fq"]
+[ext_resource type="PackedScene" uid="uid://tux704pt1qcd" path="res://Scenes/rug_interactable.tscn" id="14_g01fq"]
 [ext_resource type="Texture2D" uid="uid://7mwayt4xc73k" path="res://Assets/Map/RugRolled.webp" id="15_0bcf6"]
 [ext_resource type="PackedScene" uid="uid://ba2suifail81f" path="res://Scenes/safeObject.tscn" id="16_g01fq"]
 [ext_resource type="Texture2D" uid="uid://bces220kgiav7" path="res://Assets/Map/Trapdoor.webp" id="16_y1bqn"]
@@ -35,8 +35,8 @@
 [ext_resource type="PackedScene" uid="uid://chulbck1unk60" path="res://Scenes/bucketObject.tscn" id="24_d3ars"]
 [ext_resource type="PackedScene" uid="uid://cmrsb5f22osvc" path="res://Scenes/basement_note.tscn" id="25_ao4cr"]
 [ext_resource type="PackedScene" uid="uid://c430pnfa03c5m" path="res://Scenes/blueprintsObject.tscn" id="26_w86vl"]
-[ext_resource type="PackedScene" path="res://Scenes/plushieObject.tscn" id="27_33kev"]
-[ext_resource type="PackedScene" path="res://Scenes/engineObject.tscn" id="34_ao4cr"]
+[ext_resource type="PackedScene" uid="uid://qmdpf5fjjqbm" path="res://Scenes/plushieObject.tscn" id="27_33kev"]
+[ext_resource type="PackedScene" uid="uid://b2iro5c1me7ap" path="res://Scenes/engineObject.tscn" id="34_ao4cr"]
 [ext_resource type="PackedScene" uid="uid://mej3x56lpkc4" path="res://Scenes/truck_object.tscn" id="35_irg3d"]
 [ext_resource type="PackedScene" path="res://Scenes/safe_input.tscn" id="35_n1aqv"]
 
@@ -459,7 +459,7 @@ shape = SubResource("RectangleShape2D_waglr")
 position = Vector2(-19, -376)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseFloor2/Border1"]
-polygon = PackedVector2Array(33, 56, 31, 194, -89, 192, -89, 56, -91, 112, -161, 112, -237, 112, -249, 112, -269, 112, -269, 154, -351, 154, -351, 228, -409, 228, -409, 154, -487, 154, -487, 112, -505, 112, -505, -92, 543, -90, 545, 24, 545, 90, 415, 92, 269, 94, 269, 112, 253, 112, 253, 212, 109, 212, 109, 114, 33, 112)
+polygon = PackedVector2Array(33, 56, 31, 194, -89, 192, -89, 56, -89, 112, -135, 112, -135, 188, -235, 188, -235, 112, -269, 112, -269, 154, -351, 154, -351, 228, -409, 228, -409, 154, -487, 154, -487, 112, -505, 112, -505, -92, 543, -90, 545, 24, 545, 90, 415, 92, 269, 94, 269, 112, 253, 112, 253, 212, 109, 212, 109, 114, 33, 112)
 
 [node name="BedBorder" type="StaticBody2D" parent="HouseFloor2"]
 position = Vector2(-345, 205)
@@ -500,7 +500,7 @@ shape = SubResource("RectangleShape2D_kwl8l")
 position = Vector2(134, -38)
 
 [node name="Blueprints" parent="." instance=ExtResource("26_w86vl")]
-position = Vector2(-3028, 319)
+position = Vector2(-3038, 297)
 
 [node name="DeskNote" parent="." instance=ExtResource("17_0bcf6")]
 position = Vector2(-3138, 292)

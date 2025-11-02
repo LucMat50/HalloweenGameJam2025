@@ -17,7 +17,8 @@ func _on_body_entered(body):
 		print("Enter")
 		player_in_range = true
 		player = body
-		$Label.show()
+		if has_engine or has_manual or has_key:
+			$Label.show()
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):

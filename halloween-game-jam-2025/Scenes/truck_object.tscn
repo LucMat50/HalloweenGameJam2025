@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://mej3x56lpkc4"]
 
-[ext_resource type="Script" path="res://Scripts/truck_interactable.gd" id="1_3ll04"]
+[ext_resource type="Script" uid="uid://bbpt2jevwija2" path="res://Scripts/truck_interactable.gd" id="1_3ll04"]
 [ext_resource type="Texture2D" uid="uid://b4hbmuvw1khp5" path="res://Assets/Sprites/Truck.png" id="1_cfq3q"]
 [ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="2_0t5bx"]
 [ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_pmib8"]
