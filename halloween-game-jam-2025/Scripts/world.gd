@@ -5,6 +5,7 @@ func _ready():
 	Dialogic.signal_event.connect(on_dialogic_signal)
 
 func _on_world_timer_timeout() -> void:
+	$Player/Camera2D/CanvasLayer/fade_transition/AnimationPlayer.play("fade_in")
 	get_tree().change_scene_to_file("res://Scenes/bad_end_cutscene.tscn")
 
 func on_dialogic_signal(argument:String):

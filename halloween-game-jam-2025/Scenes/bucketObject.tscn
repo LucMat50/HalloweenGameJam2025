@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cuo8d5llpt4fd"]
+[gd_scene load_steps=6 format=3 uid="uid://chulbck1unk60"]
 
-[ext_resource type="Script" uid="uid://b177ddefxkb1w" path="res://Scripts/bucket_interactable.gd" id="1_0kog1"]
+[ext_resource type="Script" path="res://Scripts/bucket_interactable.gd" id="1_0kog1"]
 [ext_resource type="Texture2D" uid="uid://iht1cpj5jhs5" path="res://Assets/Sprites/Bucket_.png" id="1_abps5"]
 [ext_resource type="Resource" uid="uid://dxxp108a4eo7a" path="res://Inventory/Items/Bucket.tres" id="2_0kog1"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="4_860sg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ui7rg"]
 radius = 21.023796
@@ -17,3 +18,11 @@ texture = ExtResource("1_abps5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_ui7rg")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -53.0
+offset_top = -44.0
+offset_right = 55.0
+offset_bottom = -17.0
+theme_override_fonts/font = ExtResource("4_860sg")
+text = "Press [E] to interact"

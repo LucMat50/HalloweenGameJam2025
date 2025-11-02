@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ps23jjiig7bw"]
+[gd_scene load_steps=6 format=3 uid="uid://ps23jjiig7bw"]
 
 [ext_resource type="Script" uid="uid://dwo6vqsqrddf5" path="res://Scripts/key_object.gd" id="1_27ls4"]
 [ext_resource type="Texture2D" uid="uid://drryvmoju6y31" path="res://Inventory/Items/TempKey.png" id="1_kepx3"]
 [ext_resource type="Resource" uid="uid://c2o62vg01f8de" path="res://Inventory/Items/tempKey.tres" id="2_p2b5n"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="4_3hnrg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_27ls4"]
 radius = 32.0
@@ -17,3 +18,12 @@ texture = ExtResource("1_kepx3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_27ls4")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -33.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = -3.0
+theme_override_fonts/font = ExtResource("4_3hnrg")
+theme_override_font_sizes/font_size = 10
+text = "Press [E] to interact"

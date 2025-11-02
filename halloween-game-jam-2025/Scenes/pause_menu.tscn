@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://wt0o3w0j2bre"]
+[gd_scene load_steps=12 format=3 uid="uid://wt0o3w0j2bre"]
 
 [ext_resource type="Texture2D" uid="uid://y53pvqrtwhn1" path="res://Assets/StartPauseMenu/Board1.webp" id="1_1och7"]
 [ext_resource type="Shader" uid="uid://c37tiunijnqpn" path="res://Assets/StartPauseMenu/pause_menu.gdshader" id="1_bpi0q"]
 [ext_resource type="Script" uid="uid://dc3dsg2k6jiqm" path="res://Scripts/pause_menu.gd" id="1_myy0f"]
 [ext_resource type="Texture2D" uid="uid://k6blld1g74mh" path="res://Assets/StartPauseMenu/Board2.webp" id="2_bpi0q"]
 [ext_resource type="Texture2D" uid="uid://q5e1df8pr7qm" path="res://Assets/StartPauseMenu/Board3.webp" id="3_vmyb1"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="5_sjs17"]
 [ext_resource type="Texture2D" uid="uid://dpiobkfvrfjhq" path="res://Assets/StartPauseMenu/Pause1.webp" id="5_vmyb1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vmyb1"]
@@ -283,6 +284,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_sjs17")
 theme_override_font_sizes/font_size = 48
 text = "Resume"
 
@@ -306,6 +308,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_sjs17")
 theme_override_font_sizes/font_size = 48
 text = "Restart"
 
@@ -329,6 +332,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("5_sjs17")
 theme_override_font_sizes/font_size = 48
 text = "Quit"
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dhc2rj8l0be0j"]
+[gd_scene load_steps=10 format=3 uid="uid://c840rvx47f5ym"]
 
-[ext_resource type="Script" uid="uid://dr4onlyftc54u" path="res://Scripts/desk_note.gd" id="1_87y2x"]
-[ext_resource type="Texture2D" uid="uid://drg3m3psg1nbh" path="res://Assets/Sprites/Paper_on_desk.png" id="2_i8guh"]
+[ext_resource type="Script" path="res://Scripts/desk_note.gd" id="1_87y2x"]
 [ext_resource type="Script" uid="uid://d2ee6abpn0xq6" path="res://Resources/Puzzle.gd" id="2_k8dkr"]
 [ext_resource type="Script" uid="uid://cpocwgcs2t07p" path="res://Inventory/inventory_item.gd" id="3_iv7gt"]
+[ext_resource type="Texture2D" uid="uid://btaethlefhit2" path="res://Assets/Sprites/Paper_on_desk - Copy (2).png" id="4_iv7gt"]
 [ext_resource type="Texture2D" uid="uid://bpyjymas6u5qr" path="res://Assets/Sprites/Note_on_desk.png" id="5_iv7gt"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="6_ty7gu"]
 
 [sub_resource type="Resource" id="Resource_ty7gu"]
 script = ExtResource("2_k8dkr")
@@ -14,7 +15,7 @@ metadata/_custom_type_script = "uid://d2ee6abpn0xq6"
 [sub_resource type="Resource" id="Resource_dwlax"]
 script = ExtResource("3_iv7gt")
 name = " Butchers Notes"
-texture = ExtResource("2_i8guh")
+texture = ExtResource("4_iv7gt")
 description_timeline = "Butchers Notes"
 puzzle = SubResource("Resource_ty7gu")
 metadata/_custom_type_script = "uid://cpocwgcs2t07p"
@@ -31,6 +32,14 @@ texture = ExtResource("5_iv7gt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_jwffv")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -55.0
+offset_top = -55.0
+offset_right = 53.0
+offset_bottom = -28.0
+theme_override_fonts/font = ExtResource("6_ty7gu")
+text = "Press [E] to interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

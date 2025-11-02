@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccpt6cbafs4v4"]
+[gd_scene load_steps=5 format=3 uid="uid://ccpt6cbafs4v4"]
 
 [ext_resource type="Script" uid="uid://8fknewqn6oue" path="res://Scripts/saw_interactable.gd" id="1_vtypo"]
 [ext_resource type="Texture2D" uid="uid://nyyemjhak8if" path="res://Assets/Map/Deer.webp" id="2_vtypo"]
+[ext_resource type="FontFile" uid="uid://dvpbjxx1yb2qx" path="res://Assets/Font/TheBlowar-Regular.ttf" id="3_q06vk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vtypo"]
 radius = 51.24451
@@ -22,6 +23,15 @@ shape = SubResource("CircleShape2D_vtypo")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-19, 39, -12, 30, -7, 19, -7, 1, -7, -13, 9, -8, 16, -14, 4, -29, 17, -51, 18, -67, -11, -61, -22, -44, -24, 56, -20, 56)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -26.0
+offset_top = -79.0
+offset_right = 82.0
+offset_bottom = -52.0
+theme_override_fonts/font = ExtResource("3_q06vk")
+theme_override_font_sizes/font_size = 9
+text = "Press [E] to interact"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
